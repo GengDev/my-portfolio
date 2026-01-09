@@ -7,21 +7,32 @@
 body {
   font-family: var(--font-inter), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   line-height: 1.5;
+  overflow-x: hidden;
+  overflow-y: auto;
+  /* Pure Black background - solid and clean */
+  background: #000000;
+  position: relative;
 }
 
 /* Smooth scrolling for anchor links */
 html {
   scroll-behavior: smooth;
+  height: 100%;
 }
 
-/* Focus styles for accessibility - Cyberpunk theme */
+html, body {
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+/* Focus styles for accessibility - Cyberpunk Blue theme */
 *:focus {
-  outline: 2px solid #00ffff;
+  outline: 2px solid #1e40af;
   outline-offset: 2px;
-  box-shadow: 0 0 0 2px rgba(0, 255, 255, 0.3);
+  box-shadow: 0 0 0 2px rgba(30, 64, 175, 0.3);
 }
 
-/* Custom scrollbar for cyberpunk theme */
+/* Custom scrollbar for cosmic space theme */
 ::-webkit-scrollbar {
   width: 8px;
 }
@@ -31,16 +42,589 @@ html {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(135deg, #00ffff, #9333ea);
+  background: linear-gradient(135deg, #1e40af, #06b6d4);
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(135deg, #06b6d4, #a855f7);
+  background: linear-gradient(135deg, #1d4ed8, #0891b2);
 }
 
 /* Selection colors */
 ::selection {
-  background: rgba(0, 255, 255, 0.3);
+  background: rgba(30, 64, 175, 0.3);
   color: white;
+}
+
+/* Page loading animations */
+@keyframes pageFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes staggerFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes epicEntrance {
+  0% {
+    opacity: 0;
+    transform: scale(0.8) translateY(50px) rotateX(20deg);
+    filter: blur(10px);
+  }
+  60% {
+    opacity: 0.8;
+    transform: scale(1.05) translateY(-10px) rotateX(0deg);
+    filter: blur(2px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0) rotateX(0deg);
+    filter: blur(0);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-100px) scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(100px) scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+}
+
+@keyframes glowPulse {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(16, 185, 129, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 40px rgba(16, 185, 129, 0.6), 0 0 60px rgba(16, 185, 129, 0.3);
+  }
+}
+
+@keyframes textShimmer {
+  0% {
+    background-position: -200% center;
+  }
+  100% {
+    background-position: 200% center;
+  }
+}
+
+/* Page fade-in */
+.page-fade-in {
+  animation: pageFadeIn 0.8s ease-out;
+}
+
+/* Section stagger animations with epic effects */
+.section-fade-in:nth-child(1) { animation-delay: 0.2s; }
+.section-fade-in:nth-child(2) { animation-delay: 0.6s; }
+.section-fade-in:nth-child(3) { animation-delay: 1.0s; }
+.section-fade-in:nth-child(4) { animation-delay: 1.4s; }
+.section-fade-in:nth-child(5) { animation-delay: 1.8s; }
+.section-fade-in:nth-child(6) { animation-delay: 2.2s; }
+.section-fade-in:nth-child(7) { animation-delay: 2.6s; }
+
+.section-fade-in {
+  animation: epicEntrance 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+  opacity: 0;
+}
+
+/* Epic entrance for hero elements */
+.epic-entrance {
+  animation: epicEntrance 1.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+  opacity: 0;
+}
+
+/* Slide animations for hero layout */
+.slide-in-left {
+  animation: slideInLeft 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+  opacity: 0;
+}
+
+.slide-in-right {
+  animation: slideInRight 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+  opacity: 0;
+}
+
+/* Glow pulse for interactive elements */
+.glow-pulse {
+  animation: glowPulse 2s ease-in-out infinite;
+}
+
+/* Text shimmer effect */
+.text-shimmer {
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.4),
+    transparent
+  );
+  background-size: 200% 100%;
+  animation: textShimmer 2s infinite;
+}
+
+/* Loading spinner */
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.loading-spinner {
+  animation: spin 1s linear infinite;
+}
+
+/* ========== COSMIC SPACE THEME ANIMATIONS ========== */
+
+/* Stars twinkling animation */
+@keyframes twinkle {
+  0%, 100% {
+    opacity: 0.3;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.2);
+  }
+}
+
+/* Epic floating particles animation */
+@keyframes epicFloat {
+  0%, 100% {
+    transform: translateY(0px) translateX(0px) rotate(0deg) scale(1);
+    opacity: 0.7;
+  }
+  25% {
+    transform: translateY(-20px) translateX(10px) rotate(90deg) scale(1.1);
+    opacity: 1;
+  }
+  50% {
+    transform: translateY(-10px) translateX(-5px) rotate(180deg) scale(0.9);
+    opacity: 0.8;
+  }
+  75% {
+    transform: translateY(-25px) translateX(15px) rotate(270deg) scale(1.2);
+    opacity: 1;
+  }
+}
+
+/* Energy wave animation */
+@keyframes energyWave {
+  0%, 100% {
+    transform: scale(1) rotate(0deg);
+    opacity: 0.3;
+  }
+  50% {
+    transform: scale(1.2) rotate(180deg);
+    opacity: 0.8;
+  }
+}
+
+/* Cyberpunk pulse animation */
+@keyframes cosmicPulseEpic {
+  0%, 100% {
+    box-shadow: 0 0 60px rgba(37, 99, 235, 0.8), 0 0 120px rgba(6, 182, 212, 0.4), 0 0 180px rgba(148, 163, 184, 0.2);
+    transform: scale(1);
+  }
+  50% {
+    box-shadow: 0 0 100px rgba(37, 99, 235, 1.2), 0 0 200px rgba(6, 182, 212, 0.8), 0 0 300px rgba(148, 163, 184, 0.4);
+    transform: scale(1.05);
+  }
+}
+
+/* Cosmic glow pulse */
+@keyframes cosmicPulse {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(99, 102, 241, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 40px rgba(99, 102, 241, 0.6), 0 0 60px rgba(168, 85, 247, 0.4);
+  }
+}
+
+/* Shooting star animation */
+@keyframes shootingStar {
+  0% {
+    transform: translateX(-100px) translateY(-100px) scale(0);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  90% {
+    opacity: 1;
+    transform: translateX(800px) translateY(600px) scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(900px) translateY(700px) scale(0);
+  }
+}
+
+/* Nebula drift animation */
+@keyframes nebulaDrift {
+  0%, 100% {
+    transform: translateX(0) translateY(0) rotate(0deg);
+  }
+  25% {
+    transform: translateX(20px) translateY(-10px) rotate(90deg);
+  }
+  50% {
+    transform: translateX(-15px) translateY(15px) rotate(180deg);
+  }
+  75% {
+    transform: translateX(10px) translateY(-5px) rotate(270deg);
+  }
+}
+
+/* Aurora wave animation */
+@keyframes auroraWave {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+/* Star field animation */
+@keyframes starField {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(-2000px);
+  }
+}
+
+/* Meteor shower */
+@keyframes meteorShower {
+  0% {
+    transform: translateX(-100px) translateY(-100px);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(calc(100vw + 100px)) translateY(calc(100vh + 100px));
+    opacity: 0;
+  }
+}
+
+/* Epic True Space section background - for individual sections */
+.cosmic-section {
+  position: relative;
+  background: #000000;
+}
+
+.cosmic-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image:
+    /* Enhanced circuit pattern for black background */
+    radial-gradient(1px 1px at 50px 80px, rgba(6, 182, 212, 0.8), transparent),
+    radial-gradient(1px 1px at 120px 40px, rgba(148, 163, 184, 1.0), transparent),
+    radial-gradient(1px 1px at 200px 120px, rgba(6, 182, 212, 0.7), transparent),
+    radial-gradient(1px 1px at 80px 160px, rgba(37, 99, 235, 0.9), transparent),
+    radial-gradient(1px 1px at 150px 200px, rgba(148, 163, 184, 0.9), transparent),
+    radial-gradient(1px 1px at 250px 60px, rgba(6, 182, 212, 0.8), transparent),
+    radial-gradient(1px 1px at 300px 140px, rgba(37, 99, 235, 0.7), transparent),
+    radial-gradient(1px 1px at 180px 220px, rgba(148, 163, 184, 0.8), transparent);
+  background-repeat: repeat;
+  background-size: 350px 250px;
+  animation: twinkle 6s ease-in-out infinite alternate;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.cosmic-section::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background:
+    /* Cyberpunk data streams - enhanced for black background */
+    radial-gradient(ellipse 280px 140px at 20% 20%, rgba(30, 64, 175, 0.25) 0%, transparent 70%),
+    radial-gradient(ellipse 200px 120px at 80% 70%, rgba(6, 182, 212, 0.20) 0%, transparent 60%),
+    radial-gradient(ellipse 150px 100px at 60% 40%, rgba(37, 99, 235, 0.18) 0%, transparent 50%);
+  animation: nebulaDrift 15s ease-in-out infinite;
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* Epic Cosmic Particle System */
+.cosmic-particles {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  z-index: 1;
+  overflow: hidden;
+}
+
+/* Large floating cyberpunk energy orbs */
+.cosmic-particle {
+  position: absolute;
+  background: radial-gradient(circle, rgba(37, 99, 235, 1.0) 0%, rgba(6, 182, 212, 0.8) 50%, transparent 100%);
+  border-radius: 50%;
+  animation: epicFloat 10s ease-in-out infinite;
+  box-shadow: 0 0 45px rgba(37, 99, 235, 1.0), 0 0 90px rgba(37, 99, 235, 0.6);
+}
+
+.cosmic-particle:nth-child(1) {
+  width: 8px;
+  height: 8px;
+  top: 15%;
+  left: 10%;
+  animation-delay: 0s;
+}
+
+.cosmic-particle:nth-child(2) {
+  width: 12px;
+  height: 12px;
+  top: 70%;
+  left: 85%;
+  animation-delay: 2s;
+}
+
+.cosmic-particle:nth-child(3) {
+  width: 6px;
+  height: 6px;
+  top: 40%;
+  left: 65%;
+  animation-delay: 4s;
+}
+
+.cosmic-particle:nth-child(4) {
+  width: 10px;
+  height: 10px;
+  top: 85%;
+  left: 25%;
+  animation-delay: 1s;
+}
+
+.cosmic-particle:nth-child(5) {
+  width: 14px;
+  height: 14px;
+  top: 8%;
+  left: 75%;
+  animation-delay: 3s;
+}
+
+/* Additional cosmic dust particles */
+.cosmic-particle:nth-child(6) {
+  width: 4px;
+  height: 4px;
+  top: 55%;
+  left: 15%;
+  animation: epicFloat 10s ease-in-out infinite;
+  animation-delay: 5s;
+  background: radial-gradient(circle, rgba(0, 212, 255, 0.8) 0%, rgba(99, 102, 241, 0.4) 70%, transparent 100%);
+}
+
+.cosmic-particle:nth-child(7) {
+  width: 5px;
+  height: 5px;
+  top: 25%;
+  left: 45%;
+  animation: epicFloat 12s ease-in-out infinite;
+  animation-delay: 7s;
+  background: radial-gradient(circle, rgba(168, 85, 247, 0.9) 0%, rgba(0, 212, 255, 0.5) 70%, transparent 100%);
+}
+
+.cosmic-particle:nth-child(8) {
+  width: 7px;
+  height: 7px;
+  top: 90%;
+  left: 60%;
+  animation: epicFloat 9s ease-in-out infinite;
+  animation-delay: 6s;
+  background: radial-gradient(circle, rgba(99, 102, 241, 0.8) 0%, rgba(168, 85, 247, 0.6) 50%, transparent 100%);
+}
+
+/* Shooting star effects */
+.shooting-star {
+  position: fixed;
+  width: 2px;
+  height: 2px;
+  background: linear-gradient(45deg, #fbbf24, #00d4ff);
+  border-radius: 50%;
+  animation: shootingStar 3s linear infinite;
+  opacity: 0;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.shooting-star:nth-child(1) {
+  top: 20%;
+  left: 10%;
+  animation-delay: 5s;
+}
+
+.shooting-star:nth-child(2) {
+  top: 60%;
+  left: 20%;
+  animation-delay: 12s;
+}
+
+.shooting-star:nth-child(3) {
+  top: 40%;
+  left: 80%;
+  animation-delay: 8s;
+}
+
+/* Cosmic glow pulse for elements */
+.cosmic-glow {
+  animation: cosmicPulse 3s ease-in-out infinite;
+}
+
+/* Nebula drift effect */
+.nebula-drift {
+  animation: nebulaDrift 20s ease-in-out infinite;
+}
+
+/* Star field effect */
+.star-field {
+  animation: starField 100s linear infinite;
+}
+
+/* Epic Meteor Showers */
+.meteor-shower {
+  position: fixed;
+  width: 3px;
+  height: 30px;
+  background: linear-gradient(to bottom, transparent, #fbbf24, #00d4ff, #a855f7);
+  transform: rotate(45deg);
+  animation: meteorShower 6s linear infinite;
+  opacity: 0;
+  z-index: 1;
+  pointer-events: none;
+  box-shadow: 0 0 10px rgba(251, 191, 36, 0.5);
+}
+
+.meteor-shower:nth-child(1) {
+  top: 10%;
+  left: 5%;
+  animation-delay: 2s;
+}
+
+.meteor-shower:nth-child(2) {
+  top: 30%;
+  left: 15%;
+  animation-delay: 6s;
+}
+
+.meteor-shower:nth-child(3) {
+  top: 50%;
+  left: 25%;
+  animation-delay: 10s;
+}
+
+/* Energy wave particles */
+.energy-wave {
+  position: fixed;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(37, 99, 235, 0.9) 0%, rgba(6, 182, 212, 0.7) 50%, transparent 100%);
+  animation: energyWave 10s ease-in-out infinite;
+  z-index: 1;
+  pointer-events: none;
+  box-shadow: 0 0 40px rgba(37, 99, 235, 0.8);
+}
+
+.energy-wave:nth-child(1) {
+  width: 100px;
+  height: 100px;
+  top: 20%;
+  right: 10%;
+  animation-delay: 0s;
+}
+
+.energy-wave:nth-child(2) {
+  width: 80px;
+  height: 80px;
+  bottom: 30%;
+  left: 20%;
+  animation-delay: 4s;
+}
+
+.energy-wave:nth-child(3) {
+  width: 120px;
+  height: 120px;
+  top: 60%;
+  right: 20%;
+  animation-delay: 8s;
+}
+
+/* Cyberpunk energy orbs */
+.cosmic-orb {
+  position: fixed;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(37, 99, 235, 1.0) 0%, rgba(6, 182, 212, 0.8) 50%, rgba(148, 163, 184, 0.6) 100%);
+  animation: cosmicPulseEpic 5s ease-in-out infinite;
+  z-index: 1;
+  pointer-events: none;
+  box-shadow: 0 0 50px rgba(37, 99, 235, 0.9);
+}
+
+.cosmic-orb:nth-child(1) {
+  width: 20px;
+  height: 20px;
+  top: 25%;
+  left: 30%;
+  animation-delay: 1s;
+}
+
+.cosmic-orb:nth-child(2) {
+  width: 15px;
+  height: 15px;
+  bottom: 40%;
+  right: 35%;
+  animation-delay: 3s;
+}
+
+.cosmic-orb:nth-child(3) {
+  width: 25px;
+  height: 25px;
+  top: 70%;
+  left: 50%;
+  animation-delay: 5s;
 }

@@ -1,15 +1,23 @@
 // Application constants and configuration
 
-// Theme configuration
+// Theme configuration - Cyberpunk Blue Theme 🔵
 export const THEME = {
   colors: {
-    primary: '#00FFFF', // Cyan
-    secondary: '#0080FF', // Royal Blue
-    accent: '#9333EA', // Purple
+    primary: '#2563eb', // Electric Blue
+    secondary: '#06b6d4', // Electric Cyan
+    accent: '#3b82f6', // Royal Blue
+    cosmic: '#0ea5e9', // Sky Blue
+    star: '#60a5fa', // Light Blue Star
     background: {
-      dark: '#000000',
-      darker: '#111111',
-      gradient: 'from-black via-gray-900 to-black'
+      primary: '#0f172a', // Very Dark Navy
+      secondary: '#1e293b', // Dark Blue Gray
+      tertiary: '#334155', // Medium Blue Gray
+      gradient: 'from-slate-900 via-blue-950 to-slate-900'
+    },
+    surface: {
+      primary: 'rgba(37, 99, 235, 0.08)', // Electric blue glow
+      secondary: 'rgba(6, 182, 212, 0.12)', // Cyan glow
+      hover: 'rgba(59, 130, 246, 0.2)' // Royal blue glow
     }
   },
   animations: {
@@ -19,6 +27,11 @@ export const THEME = {
       slow: 500
     },
     easing: 'ease-out'
+  },
+  shadows: {
+    soft: '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)',
+    medium: '0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)',
+    glow: '0 0 20px rgba(30, 64, 175, 0.3)'
   }
 } as const;
 
@@ -26,6 +39,7 @@ export const THEME = {
 export const NAVIGATION = [
   { name: 'About', href: '#about' },
   { name: 'Experience', href: '#experience' },
+  { name: 'Education', href: '#education' },
   { name: 'Skills', href: '#skills' },
   { name: 'Projects', href: '#projects' },
   { name: 'Contact', href: '#contact' },
@@ -33,8 +47,8 @@ export const NAVIGATION = [
 
 // Social links
 export const SOCIAL_LINKS = [
-  { name: 'GitHub', href: '#', iconName: 'Github' },
-  { name: 'LinkedIn', href: '#', iconName: 'Linkedin' },
+  { name: 'GitHub', href: 'https://github.com/GengDev', iconName: 'Github' },
+  { name: 'LinkedIn', href: 'https://www.linkedin.com/in/watchara-sritonwong', iconName: 'Linkedin' },
   { name: 'Email', href: 'mailto:Watchara.geng.work@gmail.com', iconName: 'Mail' },
 ] as const;
 

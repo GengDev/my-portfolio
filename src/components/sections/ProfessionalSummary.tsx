@@ -1,52 +1,106 @@
+'use client';
+
+import { useEffect, useState, useRef } from 'react';
+
 interface ProfessionalSummaryProps {
   title: string;
   paragraphs: string[];
 }
 
 export function ProfessionalSummary({ title, paragraphs }: ProfessionalSummaryProps) {
-  return (
-    <section id="summary" className="py-20 bg-gradient-to-br from-gray-900 via-black to-gray-900 relative overflow-hidden">
+  const [counters, setCounters] = useState({ experience: 0, projects: 0, available: 0 });
+  const sectionRef = useRef<HTMLDivElement>(null);
 
-      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4 bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">
-            {title}
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            // Start counting animation
+            const countUp = (start: number, end: number, duration: number, key: string) => {
+              const increment = end / (duration / 16);
+              let current = start;
+              const timer = setInterval(() => {
+                current += increment;
+                if (current >= end) {
+                  current = end;
+                  clearInterval(timer);
+                }
+                setCounters(prev => ({ ...prev, [key]: Math.floor(current) }));
+              }, 16);
+            };
+
+            setTimeout(() => countUp(0, 2.5, 2000, 'experience'), 200);
+            observer.disconnect();
+          }
+        });
+      },
+      { threshold: 0.5 }
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
+  return (
+    <section id="summary" className="py-24 cosmic-section">
+      <div className="max-w-7xl mx-auto px-6 lg:px-8">
+        {/* Cosmic Section Header */}
+        <div className="text-center mb-16">
+          <h2 className="text-3xl lg:text-4xl font-bold text-white mb-6 relative overflow-hidden">
+            <span className="relative z-10 bg-gradient-to-r from-blue-400 via-cyan-400 to-sky-400 bg-clip-text text-transparent cosmic-glow">{title}</span>
           </h2>
-          <div className="w-20 h-1 bg-gradient-to-r from-cyan-400 via-blue-400 to-sky-400 mx-auto rounded-full shadow-[0_0_15px_rgba(0,255,255,0.5)]"></div>
+          <div className="w-16 h-1 bg-gradient-to-r from-blue-400 via-cyan-400 to-sky-400 mx-auto rounded-full"></div>
         </div>
 
-        <div className="relative">
-          {/* Neomorphism Card with Glassmorphism */}
-          <div className="absolute -inset-2 bg-gradient-to-r from-cyan-500/20 via-blue-500/20 to-sky-500/20 rounded-3xl blur-2xl opacity-75"></div>
-          <div className="relative bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl p-8 sm:p-12 rounded-3xl border border-white/20 shadow-[0_25px_50px_rgba(0,0,0,0.5)]">
-            {/* Inner glow effect */}
-            <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/5 to-blue-500/5 rounded-3xl"></div>
-
-            <div className="relative text-gray-200 leading-relaxed space-y-6 text-lg font-light">
-              {paragraphs.map((paragraph, index) => (
-                <p
-                  key={index}
-                  className="animate-fade-in-up relative"
-                  style={{animationDelay: `${index * 200}ms`}}
-                >
-                  <span className="relative z-10">{paragraph}</span>
-                  {/* Subtle text glow */}
-                  <span className="absolute inset-0 text-cyan-300/20 blur-sm">{paragraph}</span>
-                </p>
-              ))}
-            </div>
-
-            {/* Decorative Corner Elements */}
-            <div className="absolute top-4 right-4 w-16 h-16 border-t-2 border-r-2 border-cyan-400/30 rounded-tr-2xl"></div>
-            <div className="absolute bottom-4 left-4 w-16 h-16 border-b-2 border-l-2 border-blue-400/30 rounded-bl-2xl"></div>
-
-            {/* Floating accent dots */}
-            <div className="absolute top-8 right-8 w-2 h-2 bg-cyan-400 rounded-full animate-pulse shadow-[0_0_10px_rgba(0,255,255,0.6)]"></div>
-            <div className="absolute bottom-8 left-8 w-2 h-2 bg-blue-400 rounded-full animate-pulse shadow-[0_0_10px_rgba(59,130,246,0.6)]" style={{animationDelay: '1s'}}></div>
+        {/* Content Layout */}
+        <div ref={sectionRef} className="grid lg:grid-cols-0 gap-12 items-start">
+          {/* Main Content */}
+          <div className="lg:col-span-3 space-y-6">
+            {paragraphs.map((paragraph, index) => (
+              <p
+                key={index}
+                className="text-lg text-gray-400 leading-relaxed"
+              >
+                {paragraph}
+              </p>
+            ))}
           </div>
+
+          {/* Cosmic Stats Cards */}
+          {/* <div className="lg:col-span-2 grid gap-6">
+            <div className="bg-slate-800/50 rounded-2xl p-6 border border-slate-700/50 hover:border-indigo-400/30 transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:shadow-indigo-500/20 cosmic-glow">
+              <div className="flex items-center gap-4">
+                <div className="w-12 h-12 bg-indigo-500/20 rounded-xl flex items-center justify-center">
+                  <svg className="w-6 h-6 text-indigo-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                </div>
+                <div>
+                  <div className="text-2xl font-bold text-indigo-400">{counters.experience}+</div>
+                  <div className="text-sm text-gray-400">Years Experience</div>
+                </div>
+              </div>
+            </div>
+          </div> */}
+        </div>
+
+        {/* Cosmic Bottom CTA */}
+        <div className="text-center mt-16">
+          <p className="text-gray-400 mb-8">Ready to explore the digital cosmos together?</p>
+          <a
+            href="#contact"
+            className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-blue-500 to-cyan-600 text-white font-semibold rounded-xl hover:from-blue-600 hover:to-cyan-700 transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-blue-500/25 cosmic-glow"
+          >
+            Launch Project
+            <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+            </svg>
+          </a>
         </div>
       </div>
-
     </section>
   );
 }

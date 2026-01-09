@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
+import { ErrorBoundary } from "@/components/ui/ErrorBoundary";
 import "./globals.css";
 
 const inter = Inter({
@@ -12,12 +13,56 @@ const inter = Inter({
 export const metadata: Metadata = {
   title: "Watchara Sritonwong | Full-Stack Software Engineer",
   description: "Full-Stack Software Engineer specializing in scalable web applications and high-traffic E-commerce platforms. Expert in Node.js, PHP, Vue.js with performance optimization focus.",
-  keywords: ["software engineer", "full-stack developer", "e-commerce", "node.js", "php", "vue.js", "portfolio"],
+  keywords: ["software engineer", "full-stack developer", "e-commerce", "node.js", "php", "vue.js", "portfolio", "web development"],
   authors: [{ name: "Watchara Sritonwong" }],
+  creator: "Watchara Sritonwong",
+  publisher: "Watchara Sritonwong",
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
+  metadataBase: new URL('https://your-portfolio-url.com'),
+  alternates: {
+    canonical: '/',
+  },
   openGraph: {
     title: "Watchara Sritonwong | Full-Stack Software Engineer",
     description: "Building scalable enterprise solutions with modern web technologies",
+    url: "https://your-portfolio-url.com",
+    siteName: "Watchara Sritonwong Portfolio",
+    locale: "en_US",
     type: "website",
+    images: [
+      {
+        url: "/images/profile.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Watchara Sritonwong - Full-Stack Developer",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Watchara Sritonwong | Full-Stack Software Engineer",
+    description: "Building scalable enterprise solutions with modern web technologies",
+    images: ["/images/profile.jpg"],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    nocache: false,
+    googleBot: {
+      index: true,
+      follow: true,
+      noimageindex: false,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
+  verification: {
+    google: 'your-google-verification-code',
   },
 };
 
@@ -28,12 +73,113 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={inter.variable}>
-      <body className="font-inter antialiased bg-gradient-to-br from-black via-gray-900 to-black text-white min-h-screen flex flex-col">
-        <Header />
-        <main className="flex-1 pt-20">
-          {children}
-        </main>
-        <Footer />
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Person",
+              "name": "Watchara Sritonwong",
+              "jobTitle": "Full-Stack Software Engineer",
+              "description": "Full-Stack Software Engineer specializing in scalable web applications and high-traffic E-commerce platforms. Expert in Node.js, PHP, Vue.js with performance optimization focus.",
+              "url": "https://your-portfolio-url.com",
+              "sameAs": [
+                "https://github.com/yourusername",
+                "https://linkedin.com/in/yourprofile"
+              ],
+              "address": {
+                "@type": "PostalAddress",
+                "addressLocality": "Bangkok",
+                "addressCountry": "Thailand"
+              },
+              "email": "Watchara.geng.work@gmail.com",
+              "knowsAbout": [
+                "Node.js",
+                "PHP",
+                "Vue.js",
+                "React",
+                "JavaScript",
+                "TypeScript",
+                "MySQL",
+                "Performance Optimization",
+                "E-commerce Platforms"
+              ],
+              "hasOccupation": {
+                "@type": "Occupation",
+                "name": "Full-Stack Software Engineer",
+                "occupationLocation": {
+                  "@type": "City",
+                  "name": "Bangkok",
+                  "addressCountry": "TH"
+                }
+              }
+            })
+          }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "WebSite",
+              "name": "Watchara Sritonwong - Full-Stack Software Engineer",
+              "url": "https://your-portfolio-url.com",
+              "description": "Portfolio of Watchara Sritonwong, Full-Stack Software Engineer specializing in modern web technologies",
+              "author": {
+                "@type": "Person",
+                "name": "Watchara Sritonwong"
+              },
+              "publisher": {
+                "@type": "Person",
+                "name": "Watchara Sritonwong"
+              },
+              "potentialAction": {
+                "@type": "SearchAction",
+                "target": "https://your-portfolio-url.com/search?q={search_term_string}",
+                "query-input": "required name=search_term_string"
+              }
+            })
+          }}
+        />
+      </head>
+      <body className="font-inter antialiased text-white min-h-screen flex flex-col relative overflow-auto" style={{background: 'radial-gradient(ellipse at center, rgba(99, 102, 241, 0.1) 0%, transparent 70%), linear-gradient(135deg, #0c0a1a 0%, #1a1625 50%, #2a2438 100%)'}}>
+        {/* Cosmic Background Effects */}
+        <div className="cosmic-particles">
+          <div className="cosmic-particle"></div>
+          <div className="cosmic-particle"></div>
+          <div className="cosmic-particle"></div>
+          <div className="cosmic-particle"></div>
+          <div className="cosmic-particle"></div>
+        </div>
+
+        {/* Shooting Stars */}
+        <div className="shooting-star"></div>
+        <div className="shooting-star"></div>
+        <div className="shooting-star"></div>
+
+        {/* Meteor Showers */}
+        <div className="meteor-shower"></div>
+        <div className="meteor-shower"></div>
+        <div className="meteor-shower"></div>
+
+        {/* Energy Waves */}
+        <div className="energy-wave"></div>
+        <div className="energy-wave"></div>
+        <div className="energy-wave"></div>
+
+        {/* Cosmic Energy Orbs */}
+        <div className="cosmic-orb"></div>
+        <div className="cosmic-orb"></div>
+        <div className="cosmic-orb"></div>
+
+        <ErrorBoundary>
+          <Header />
+          <main className="flex-1 relative z-10">
+            {children}
+          </main>
+          <Footer />
+        </ErrorBoundary>
       </body>
     </html>
   );

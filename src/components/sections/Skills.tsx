@@ -1,25 +1,28 @@
 const skillCategories = {
+  "Backend": [
+    "Node.js (Express)",
+    "PHP (Laravel)",
+    "PHP (CodeIgniter)"
+  ],
   "Frontend": [
     "Vue.js (Nuxt.js)",
     "React (Next.js)",
     "JavaScript (ES6+)",
-    "HTML5/CSS3",
+    "HTML5",
+    "CSS3",
     "Bootstrap"
-  ],
-  "Backend": [
-    "Node.js (Express)",
-    "PHP (Laravel)",
-    "PHP (CodeIgniter)",
-    "API Design",
-    "REST APIs"
   ],
   "Database": [
     "MySQL",
     "Microsoft SQL Server"
   ],
-  "Performance & Tools": [
+  "Specialization": [
     "Performance Optimization",
-    "Clean Code Architecture",
+    "WebP, Lazy Loading, Infinite Scroll",
+    "API Design",
+    "Clean Code Architecture"
+  ],
+  "Tools": [
     "Git",
     "Postman",
     "Sourcetree"
@@ -28,43 +31,52 @@ const skillCategories = {
 
 export function Skills() {
   return (
-    <section id="skills" className="py-20 bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900 relative overflow-hidden">
-      {/* Background Effects */}
-
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="max-w-3xl mx-auto text-center mb-16">
-          <h2 className="text-4xl sm:text-6xl font-bold text-white mb-4 bg-gradient-to-r from-cyan-400 via-blue-400 to-sky-400 bg-clip-text text-transparent animate-pulse">
-            Technical Skills
+    <section id="skills" className="py-24 cosmic-section">
+      <div className="max-w-7xl mx-auto px-6 lg:px-8">
+        {/* Cosmic Section Header */}
+        <div className="text-center mb-16">
+          <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">
+            <span className="bg-gradient-to-r from-blue-400 via-cyan-400 to-sky-400 bg-clip-text text-transparent cosmic-glow">
+              Technical Skills
+            </span>
           </h2>
-          <p className="text-lg text-gray-300 max-w-2xl mx-auto">
-            Modern technologies and tools I master to build exceptional solutions
+          <div className="w-16 h-1 bg-gradient-to-r from-blue-400 via-cyan-400 to-sky-400 mx-auto rounded-full mb-6"></div>
+          <p className="text-lg text-gray-400 max-w-2xl mx-auto">
+            Mastering the cosmic toolkit to build stellar digital solutions
           </p>
         </div>
 
+        {/* Skills Grid */}
         <div className="grid md:grid-cols-2 gap-8">
-          {Object.entries(skillCategories).map(([category, skills], index) => (
+          {Object.entries(skillCategories).map(([category, skills]) => (
             <div
               key={category}
-              className="group relative"
-              style={{animationDelay: `${index * 100}ms`}}
+              className="group"
             >
-              <div className="absolute -inset-1 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-2xl blur opacity-25 group-hover:opacity-75 transition duration-1000 group-hover:duration-200 animate-tilt"></div>
-              <div className="relative bg-white/10 backdrop-blur-lg border border-white/20 p-8 rounded-2xl shadow-2xl hover:bg-white/15 transition-all duration-300 hover:scale-105 hover:shadow-blue-500/25">
-                <h3 className="text-xl font-semibold text-white mb-6 text-center bg-gradient-to-r from-cyan-300 to-blue-300 bg-clip-text text-transparent">
-                  {category}
-                </h3>
-                <div className="flex flex-wrap gap-3 justify-center">
-                  {skills.map((skill, skillIndex) => (
-                    <span
-                      key={skill}
-                      className="px-4 py-2 bg-gradient-to-r from-cyan-500 via-blue-500 to-sky-500 text-white text-sm font-medium rounded-full shadow-lg hover:shadow-cyan-500/50 transition-all duration-300 hover:scale-110 hover:rotate-3 cursor-default animate-fade-in"
-                      style={{
-                        animationDelay: `${(index * 100) + (skillIndex * 50)}ms`,
-                        background: `linear-gradient(135deg, hsl(${(skillIndex * 45) % 240 + 180}, 70%, 60%), hsl(${((skillIndex * 45) + 45) % 240 + 180}, 70%, 60%))`
-                      }}
-                    >
-                      {skill}
+              <div className="bg-slate-800/50 rounded-3xl p-8 border border-slate-700/50 hover:border-indigo-400/30 transition-all duration-500 hover:scale-[1.02] hover:shadow-2xl hover:shadow-indigo-500/10 cosmic-glow">
+                {/* Category Header */}
+                <div className="flex items-center mb-6">
+                  <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-2xl flex items-center justify-center mr-4">
+                    <span className="text-white font-bold text-lg">
+                      {category.charAt(0)}
                     </span>
+                  </div>
+                  <h3 className="text-2xl font-bold text-white group-hover:text-indigo-300 transition-colors duration-300">
+                    {category}
+                  </h3>
+                </div>
+                {/* Skills Tags */}
+                <div className="grid grid-cols-2 gap-3">
+                  {skills.map((skill) => (
+                    <div
+                      key={skill}
+                      className="group flex items-center justify-center px-4 py-3 bg-slate-700/50 hover:bg-slate-600/50 border border-slate-600/50 hover:border-indigo-400/30 rounded-xl transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-indigo-500/10 cursor-default"
+                    >
+                      <span className="text-gray-300 group-hover:text-indigo-300 font-medium text-sm transition-colors duration-300">
+                        {skill}
+                      </span>
+                      <div className="ml-2 w-2 h-2 bg-indigo-400 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    </div>
                   ))}
                 </div>
               </div>

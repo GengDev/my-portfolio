@@ -1,0 +1,14 @@
+User-agent: *
+Allow: /
+
+# Block access to sensitive files
+Disallow: /api/
+Disallow: /_next/
+Disallow: /node_modules/
+
+# Allow crawling of static assets
+Allow: /images/
+Allow: /.well-known/
+
+# Sitemap
+Sitemap: https://your-portfolio-url.com/sitemap.xml
