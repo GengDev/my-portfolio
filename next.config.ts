@@ -12,6 +12,11 @@ const nextConfig: NextConfig = {
         hostname: 'images.unsplash.com',
         pathname: '/**',
       },
+      {
+        protocol: 'https',
+        hostname: 'dormitory-management-frontend.vercel.app',
+        pathname: '/**',
+      },
     ],
   },
 

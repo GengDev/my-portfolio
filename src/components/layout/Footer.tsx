@@ -1,8 +1,12 @@
+"use client";
+
 import Link from "next/link";
 import { Github, Linkedin, Mail } from "lucide-react";
 import { SOCIAL_LINKS } from "@/lib/constants";
+import { useLanguage } from "@/context/LanguageContext";
 
 export function Footer() {
+  const { t } = useLanguage();
   return (
     <footer className="bg-black/95 backdrop-blur-3xl border-t border-blue-500/20 relative overflow-hidden">
       {/* Epic Cyberpunk Background */}
@@ -17,23 +21,23 @@ export function Footer() {
       <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-blue-400 via-cyan-400 to-transparent animate-pulse"></div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 relative z-10">
-          <div className="text-center mb-12">
-            {/* Epic Footer Title */}
-            <h3 className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-blue-400 via-cyan-400 to-slate-300 bg-clip-text text-transparent mb-4">
-              Let&apos;s Connect in the Cyberpunk Network
-            </h3>
-            <p className="text-white/70 max-w-md mx-auto">
-              Ready to launch your next digital project?
-            </p>
-          </div>
+        <div className="text-center mb-12">
+          {/* Epic Footer Title */}
+          <h3 className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-blue-400 via-cyan-400 to-slate-300 bg-clip-text text-transparent mb-4 font-orbitron">
+            {t.footer.title}
+          </h3>
+          <p className="text-white/70 max-w-md mx-auto">
+            {t.footer.subtitle}
+          </p>
+        </div>
 
         <div className="flex flex-col md:flex-row justify-between items-center">
           <div className="mb-8 md:mb-0 text-center md:text-left">
             <p className="text-white/60 text-sm font-medium">
-              © {new Date().getFullYear()} Watchara Sritonwong
+              © {new Date().getFullYear()} {t.footer.copyright}
             </p>
             <p className="text-cyan-400/70 text-xs mt-1">
-              🚀 Built with Next.js, TypeScript & Tailwind CSS in the cosmos
+              🚀 {t.footer.builtWith}
             </p>
           </div>
 
@@ -47,7 +51,7 @@ export function Footer() {
                   className="group relative p-4 text-white/60 hover:text-white transition-all duration-500 rounded-2xl hover:bg-gradient-to-r hover:from-blue-500/20 hover:to-cyan-500/20 border border-white/10 hover:border-blue-400/50 hover:shadow-2xl hover:shadow-blue-500/25 hover:scale-125"
                   target={link.name !== "Email" ? "_blank" : undefined}
                   rel={link.name !== "Email" ? "noopener noreferrer" : undefined}
-                  style={{animationDelay: `${index * 200}ms`}}
+                  style={{ animationDelay: `${index * 200}ms` }}
                   aria-label={`${link.name} - ${link.name === 'Email' ? 'Send email' : 'Open in new tab'}`}
                 >
                   {/* Multiple glow layers */}

@@ -1,62 +1,22 @@
-interface ExperienceItem {
-  title: string;
-  company: string;
-  period: string;
-  description: string;
-  achievements: string[];
-}
+"use client";
 
-const experiences: ExperienceItem[] = [
-  {
-    title: "Software Engineer",
-    company: "Advice IT Infinite",
-    period: "January 2025 – Present",
-    description: "Full-Stack Development: Engineered and maintained end-to-end web applications for Advice and iStore, ensuring high availability and scalability for nationwide users.",
-    achievements: [
-      "Sales & Marketing Engines: Developed complex Pre-order, Promotion, and Lucky Draw systems, managing real-time stock integration and transaction logic during high-traffic product launches",
-      "Performance Optimization: Improved frontend efficiency by implementing Image Optimization, Lazy Loading, and Infinite Scrolling, leading to faster page load times and enhanced user retention",
-      "Business Solutions: Designed robust Admin Dashboards and automated reporting systems to provide data-driven insights for product and operations management",
-      "System Modernization: Refactored and enhanced Legacy Systems (CodeIgniter), integrating modern features while improving overall stability and maintainability"
-    ]
-  },
-  {
-    title: "Mandatory Service",
-    company: "Military Service",
-    period: "November 2023 – November 2024",
-    description: "Completed mandatory military service, demonstrating discipline and commitment to national duty.",
-    achievements: [
-      "Demonstrated discipline and commitment to national service",
-      "Developed leadership and teamwork skills",
-      "Maintained high standards of professionalism"
-    ]
-  },
-  {
-    title: "Software Developer",
-    company: "Sirindhorn International Institute of Technology (SIIT)",
-    period: "May 2022 – October 2023",
-    description: "Workflow Automation: Digitized organizational workflows by developing internal full-stack applications, significantly reducing manual data processing time.",
-    achievements: [
-      "Data Management: Implemented secure backend logic and integrated diverse APIs to manage and verify institutional data efficiently",
-      "Developed internal full-stack applications for workflow automation",
-      "Significantly reduced manual data processing time"
-    ]
-  }
-];
+import { useLanguage } from "@/context/LanguageContext";
 
 export function Experience() {
+  const { t } = useLanguage();
   return (
     <section id="experience" className="py-24 cosmic-section">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         {/* Cosmic Section Header */}
         <div className="text-center mb-16">
           <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">
-            <span className="bg-gradient-to-r from-blue-400 via-cyan-400 to-sky-400 bg-clip-text text-transparent cosmic-glow">
-              Professional Experience
+            <span className="bg-gradient-to-r from-blue-400 via-cyan-400 to-sky-400 bg-clip-text text-transparent cosmic-glow font-orbitron">
+              {t.experience.title}
             </span>
           </h2>
           <div className="w-16 h-1 bg-gradient-to-r from-blue-400 via-cyan-400 to-sky-400 mx-auto rounded-full mb-6"></div>
           <p className="text-lg text-gray-400 max-w-2xl mx-auto">
-            Navigating the digital cosmos through innovative solutions and exceptional results
+            {t.experience.subtitle}
           </p>
         </div>
 
@@ -68,7 +28,7 @@ export function Experience() {
 
             {/* Timeline Items */}
             <div className="space-y-12">
-              {experiences.map((exp, index) => (
+              {t.experience.items.map((exp, index) => (
                 <div key={index} className="relative pl-24 group">
                   {/* Timeline Dot */}
                   <div className="absolute left-0 top-6 w-16 h-16 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full border-4 border-black flex items-center justify-center z-10 group-hover:scale-110 transition-transform duration-300">
@@ -107,7 +67,7 @@ export function Experience() {
                         <svg className="w-5 h-5 text-cyan-400 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                         </svg>
-                        Key Achievements
+                        {t.experience.keyAchievements}
                       </h4>
                       <ul className="space-y-3">
                         {exp.achievements.map((achievement, idx) => (

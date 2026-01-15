@@ -1,8 +1,12 @@
+"use client";
+
 // ============================================================================
 // Imports
 // ============================================================================
 
+import { useState, useEffect } from "react";
 import { Header } from "@/components/layout/Header";
+import { IntroOverlay } from "@/components/layout/IntroOverlay";
 import { Hero } from "@/components/sections/Hero";
 import { ProfessionalSummary } from "@/components/sections/ProfessionalSummary";
 import { About } from "@/components/sections/About";
@@ -16,43 +20,38 @@ import { Contact } from "@/components/sections/Contact";
 // Constants
 // ============================================================================
 
-const HERO_DATA = {
-  jobTitle: "Full-Stack Software Engineer",
-  valueProposition: "Building scalable web applications and high-traffic E-commerce platforms with modern technologies",
-  primaryButton: {
-    text: "Learn More",
-    href: "#summary"
-  },
-  secondaryButton: {
-    text: "Contact Me",
-    href: "#contact"
-  }
-};
-
-const SUMMARY_DATA = {
-  title: "Professional Summary",
-  paragraphs: [
-    "Mid-level Full-Stack Software Engineer with expertise in building scalable web applications and high-traffic E-commerce platforms. Proficient in Node.js, PHP, and Vue.js with a strong focus on system performance optimization and user experience.",
-    "Experienced in modernizing legacy systems and translating complex business requirements into robust production-ready solutions. Skilled in developing complex sales and marketing engines, admin dashboards, and automated reporting systems.",
-    "Passionate about performance optimization through techniques like Image Optimization, Lazy Loading, and Infinite Scrolling. Committed to delivering high-quality, maintainable code that drives business value."
-  ]
-};
+// Data moved to translation files
 
 // ============================================================================
 // Component
 // ============================================================================
 
 export default function Home() {
+  const [showIntro, setShowIntro] = useState(true);
+
+  // Prevent scrolling when intro is active
+  useEffect(() => {
+    if (showIntro) {
+      document.body.classList.add('overflow-hidden-important');
+    } else {
+      document.body.classList.remove('overflow-hidden-important');
+    }
+    return () => document.body.classList.remove('overflow-hidden-important');
+  }, [showIntro]);
+
   return (
-    <div className="min-h-screen bg-white page-fade-in">
+    <div className="min-h-screen bg-white page-fade-in relative">
+      {/* Intro Overlay */}
+      {showIntro && <IntroOverlay onEnter={() => setShowIntro(false)} />}
+
       <Header />
 
       <main>
         <div className="section-fade-in">
-          <Hero {...HERO_DATA} />
+          <Hero />
         </div>
         <div className="section-fade-in">
-          <ProfessionalSummary {...SUMMARY_DATA} />
+          <ProfessionalSummary />
         </div>
         <div className="section-fade-in">
           <About />

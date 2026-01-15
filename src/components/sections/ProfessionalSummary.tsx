@@ -2,12 +2,10 @@
 
 import { useEffect, useState, useRef } from 'react';
 
-interface ProfessionalSummaryProps {
-  title: string;
-  paragraphs: string[];
-}
+import { useLanguage } from "@/context/LanguageContext";
 
-export function ProfessionalSummary({ title, paragraphs }: ProfessionalSummaryProps) {
+export function ProfessionalSummary() {
+  const { t } = useLanguage();
   const [counters, setCounters] = useState({ experience: 0, projects: 0, available: 0 });
   const sectionRef = useRef<HTMLDivElement>(null);
 
@@ -50,7 +48,7 @@ export function ProfessionalSummary({ title, paragraphs }: ProfessionalSummaryPr
         {/* Cosmic Section Header */}
         <div className="text-center mb-16">
           <h2 className="text-3xl lg:text-4xl font-bold text-white mb-6 relative overflow-hidden">
-            <span className="relative z-10 bg-gradient-to-r from-blue-400 via-cyan-400 to-sky-400 bg-clip-text text-transparent cosmic-glow">{title}</span>
+            <span className="relative z-10 bg-gradient-to-r from-blue-400 via-cyan-400 to-sky-400 bg-clip-text text-transparent cosmic-glow font-orbitron">{t.summary.title}</span>
           </h2>
           <div className="w-16 h-1 bg-gradient-to-r from-blue-400 via-cyan-400 to-sky-400 mx-auto rounded-full"></div>
         </div>
@@ -59,14 +57,15 @@ export function ProfessionalSummary({ title, paragraphs }: ProfessionalSummaryPr
         <div ref={sectionRef} className="grid lg:grid-cols-0 gap-12 items-start">
           {/* Main Content */}
           <div className="lg:col-span-3 space-y-6">
-            {paragraphs.map((paragraph, index) => (
-              <p
-                key={index}
-                className="text-lg text-gray-400 leading-relaxed"
-              >
-                {paragraph}
-              </p>
-            ))}
+            <p className="text-lg text-gray-400 leading-relaxed hover:text-white transition-colors duration-300">
+              {t.summary.p1}
+            </p>
+            <p className="text-lg text-gray-400 leading-relaxed hover:text-white transition-colors duration-300">
+              {t.summary.p2}
+            </p>
+            <p className="text-lg text-gray-400 leading-relaxed hover:text-white transition-colors duration-300">
+              {t.summary.p3}
+            </p>
           </div>
 
           {/* Cosmic Stats Cards */}

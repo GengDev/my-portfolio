@@ -3,10 +3,19 @@
 import { useState } from "react";
 import Link from "next/link";
 import { Menu, X } from "lucide-react";
-import { NAVIGATION } from "@/lib/constants";
+import { useLanguage } from "@/context/LanguageContext";
+import { LanguageSwitcher } from "@/components/ui/LanguageSwitcher";
 
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const { t } = useLanguage();
+
+  const NAV_ITEMS = [
+    { name: t.nav.about, href: "#about" },
+    { name: t.nav.experience, href: "#experience" },
+    { name: t.nav.projects, href: "#projects" },
+    { name: t.nav.contact, href: "#contact" },
+  ];
 
   return (
     <header className="fixed top-0 w-full bg-black/30 backdrop-blur-3xl border-b border-blue-500/20 z-50 shadow-2xl shadow-blue-500/30">
@@ -28,28 +37,34 @@ export function Header() {
             </Link>
           </div>
 
-          {/* Desktop Navigation */}
-          <nav className="hidden md:flex space-x-8">
-            {NAVIGATION.map((item, index) => (
-              <Link
-                key={item.name}
-                href={item.href}
-                className="relative group px-4 py-2 text-white/90 hover:text-white font-semibold transition-all duration-500 hover:scale-110"
-                style={{animationDelay: `${index * 100}ms`}}
-                aria-label={`Navigate to ${item.name} section`}
-              >
-                {/* Neon glow effect */}
-                <span className="absolute inset-0 bg-gradient-to-r from-blue-500/20 to-cyan-500/20 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-sm"></span>
-                <span className="relative z-10">{item.name}</span>
+          <div className="flex items-center gap-6">
+            {/* Desktop Navigation */}
+            <nav className="hidden md:flex space-x-6">
+              {NAV_ITEMS.map((item, index) => (
+                <Link
+                  key={item.name}
+                  href={item.href}
+                  className="relative group px-4 py-2 text-white/90 hover:text-white font-semibold transition-all duration-500 hover:scale-110"
+                  style={{ animationDelay: `${index * 100}ms` }}
+                  aria-label={`Navigate to ${item.name} section`}
+                >
+                  {/* Neon glow effect */}
+                  <span className="absolute inset-0 bg-gradient-to-r from-blue-500/20 to-cyan-500/20 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-sm"></span>
+                  <span className="relative z-10">{item.name}</span>
 
-                {/* Animated underline */}
-                <span className="absolute bottom-0 left-1/2 w-0 h-0.5 bg-gradient-to-r from-blue-400 to-cyan-400 transition-all duration-500 group-hover:w-full group-hover:left-0"></span>
+                  {/* Animated underline */}
+                  <span className="absolute bottom-0 left-1/2 w-0 h-0.5 bg-gradient-to-r from-blue-400 to-cyan-400 transition-all duration-500 group-hover:w-full group-hover:left-0"></span>
 
-                {/* Floating dot */}
-                <div className="absolute -top-1 -right-1 w-1.5 h-1.5 bg-cyan-400 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 animate-pulse"></div>
-              </Link>
-            ))}
-          </nav>
+                  {/* Floating dot */}
+                  <div className="absolute -top-1 -right-1 w-1.5 h-1.5 bg-cyan-400 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 animate-pulse"></div>
+                </Link>
+              ))}
+            </nav>
+
+            <div className="hidden md:block">
+              <LanguageSwitcher />
+            </div>
+          </div>
 
           {/* Cosmic Mobile menu button */}
           <button
@@ -76,13 +91,13 @@ export function Header() {
             <div className="absolute inset-0 bg-gradient-to-b from-blue-500/10 via-cyan-500/5 to-transparent animate-fade-in"></div>
 
             <nav className="relative py-6 space-y-1">
-              {NAVIGATION.map((item, index) => (
+              {NAV_ITEMS.map((item, index) => (
                 <Link
                   key={item.name}
                   href={item.href}
                   className="block mx-4 px-4 py-4 text-white/80 hover:text-white font-semibold rounded-xl transition-all duration-500 hover:translate-x-3 hover:scale-105 hover:bg-gradient-to-r hover:from-blue-500/20 hover:to-cyan-500/20 group"
                   onClick={() => setIsMenuOpen(false)}
-                  style={{animationDelay: `${index * 150}ms`}}
+                  style={{ animationDelay: `${index * 150}ms` }}
                   aria-label={`Navigate to ${item.name} section`}
                 >
                   <span className="relative z-10 flex items-center">
@@ -102,6 +117,11 @@ export function Header() {
               {/* Cyberpunk decorative elements */}
               <div className="absolute top-4 right-8 w-2 h-2 bg-blue-400 rounded-full animate-pulse opacity-60"></div>
               <div className="absolute bottom-4 left-8 w-1 h-1 bg-cyan-400 rounded-full animate-ping opacity-40"></div>
+              <div className="px-4 pt-4 border-t border-slate-700/50 mt-4">
+                <div className="flex justify-center">
+                  <LanguageSwitcher />
+                </div>
+              </div>
             </nav>
           </div>
         )}

@@ -12,3 +12,4 @@ Allow: /.well-known/
 
 # Sitemap
 Sitemap: https://your-portfolio-url.com/sitemap.xml
+

@@ -1,4 +1,5 @@
 "use client";
+import { useLanguage } from "@/context/LanguageContext";
 
 import { useState } from "react";
 import { Mail, MapPin, Phone } from "lucide-react";
@@ -25,6 +26,7 @@ const contactInfo = [
 ];
 
 export function Contact() {
+  const { t } = useLanguage();
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -37,11 +39,11 @@ export function Contact() {
   const validateForm = () => {
     const newErrors: Record<string, string> = {};
 
-    if (!formData.name.trim()) newErrors.name = "Name is required";
-    if (!formData.email.trim()) newErrors.email = "Email is required";
-    else if (!/\S+@\S+\.\S+/.test(formData.email)) newErrors.email = "Email is invalid";
-    if (!formData.message.trim()) newErrors.message = "Message is required";
-    else if (formData.message.trim().length < 10) newErrors.message = "Message must be at least 10 characters";
+    if (!formData.name.trim()) newErrors.name = `${t.contact.form.name} ${t.contact.form.required}`;
+    if (!formData.email.trim()) newErrors.email = `${t.contact.form.email} ${t.contact.form.required}`;
+    else if (!/\S+@\S+\.\S+/.test(formData.email)) newErrors.email = t.contact.form.invalidEmail;
+    if (!formData.message.trim()) newErrors.message = `${t.contact.form.message} ${t.contact.form.required}`;
+    else if (formData.message.trim().length < 10) newErrors.message = t.contact.form.shortMessage;
 
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
@@ -87,21 +89,26 @@ export function Contact() {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="max-w-3xl mx-auto text-center mb-16">
-          <h2 className="text-4xl sm:text-5xl font-bold text-white mb-4 bg-gradient-to-r from-blue-400 via-cyan-400 to-sky-400 bg-clip-text text-transparent cosmic-glow">
-            Contact the Cosmos
+          <h2 className="text-4xl sm:text-5xl font-bold text-white mb-4 bg-gradient-to-r from-blue-400 via-cyan-400 to-sky-400 bg-clip-text text-transparent cosmic-glow font-orbitron">
+            {t.contact.title}
           </h2>
           <p className="text-lg text-gray-300">
-            Ready to launch your next digital adventure
+            {t.contact.subtitle}
           </p>
         </div>
 
         <div className="grid lg:grid-cols-2 gap-12">
           {/* Contact Information */}
           <div className="space-y-8">
-            <h3 className="text-2xl font-semibold text-white mb-8">Navigate to Me</h3>
+            <h3 className="text-2xl font-semibold text-white mb-8 font-orbitron">{t.contact.navigate}</h3>
             <div className="space-y-6">
               {contactInfo.map((info, index) => {
                 const Icon = info.icon;
+                const label = info.label === 'Email' ? t.contact.emailLabel :
+                  info.label === 'Phone' ? t.contact.phoneLabel :
+                    t.contact.locationLabel;
+                const value = info.label === 'Location' ? t.about.locationValue : info.value;
+
                 return (
                   <div key={index} className="group flex items-center space-x-4 p-4 bg-white/5 backdrop-blur-sm rounded-xl border border-white/10 hover:bg-white/10 transition-all duration-300 hover:scale-105">
                     <div className="flex-shrink-0">
@@ -110,12 +117,12 @@ export function Contact() {
                       </div>
                     </div>
                     <div>
-                      <p className="text-sm font-medium text-gray-400 uppercase tracking-wide">{info.label}</p>
+                      <p className="text-sm font-medium text-gray-400 uppercase tracking-wide">{label}</p>
                       <a
                         href={info.href}
                         className="text-white hover:text-indigo-300 transition-colors duration-300 text-lg font-medium"
                       >
-                        {info.value}
+                        {value}
                       </a>
                     </div>
                   </div>
@@ -125,8 +132,7 @@ export function Contact() {
 
             <div className="mt-12 p-6 bg-white/5 backdrop-blur-sm rounded-xl border border-white/10">
               <p className="text-gray-300 leading-relaxed">
-                I&apos;m always interested in discussing new opportunities, whether it&apos;s a full-time position,
-                consulting project, or collaboration on innovative solutions.
+                {t.contact.description}
               </p>
             </div>
           </div>
@@ -143,7 +149,7 @@ export function Contact() {
                       <svg className="w-5 h-5 text-emerald-400 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                       </svg>
-                      <span className="text-emerald-300 font-medium">Message sent successfully! I&apos;ll get back to you soon.</span>
+                      <span className="text-emerald-300 font-medium">{t.contact.form.success}</span>
                     </div>
                   </div>
                 )}
@@ -154,14 +160,14 @@ export function Contact() {
                       <svg className="w-5 h-5 text-red-400 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                       </svg>
-                      <span className="text-red-300 font-medium">Failed to send message. Please try again later.</span>
+                      <span className="text-red-300 font-medium">{t.contact.form.error}</span>
                     </div>
                   </div>
                 )}
 
                 <div>
                   <label htmlFor="name" className="block text-sm font-medium text-white mb-2">
-                    Name *
+                    {t.contact.form.name} *
                   </label>
                   <input
                     type="text"
@@ -171,10 +177,9 @@ export function Contact() {
                     onChange={handleChange}
                     required
                     aria-describedby={errors.name ? "name-error" : undefined}
-                    className={`w-full px-4 py-3 bg-white/10 border rounded-lg text-white placeholder-gray-400 focus:ring-2 focus:ring-cyan-400 focus:border-transparent transition-all duration-300 backdrop-blur-sm ${
-                      errors.name ? 'border-red-400' : 'border-white/20'
-                    }`}
-                    placeholder="Your name"
+                    className={`w-full px-4 py-3 bg-white/10 border rounded-lg text-white placeholder-gray-400 focus:ring-2 focus:ring-cyan-400 focus:border-transparent transition-all duration-300 backdrop-blur-sm ${errors.name ? 'border-red-400' : 'border-white/20'
+                      }`}
+                    placeholder={t.contact.form.namePlaceholder}
                   />
                   {errors.name && (
                     <p id="name-error" className="mt-1 text-sm text-red-400">{errors.name}</p>
@@ -183,7 +188,7 @@ export function Contact() {
 
                 <div>
                   <label htmlFor="email" className="block text-sm font-medium text-white mb-2">
-                    Email *
+                    {t.contact.form.email} *
                   </label>
                   <input
                     type="email"
@@ -193,10 +198,9 @@ export function Contact() {
                     onChange={handleChange}
                     required
                     aria-describedby={errors.email ? "email-error" : undefined}
-                    className={`w-full px-4 py-3 bg-white/10 border rounded-lg text-white placeholder-gray-400 focus:ring-2 focus:ring-cyan-400 focus:border-transparent transition-all duration-300 backdrop-blur-sm ${
-                      errors.email ? 'border-red-400' : 'border-white/20'
-                    }`}
-                    placeholder="your.email@example.com"
+                    className={`w-full px-4 py-3 bg-white/10 border rounded-lg text-white placeholder-gray-400 focus:ring-2 focus:ring-cyan-400 focus:border-transparent transition-all duration-300 backdrop-blur-sm ${errors.email ? 'border-red-400' : 'border-white/20'
+                      }`}
+                    placeholder={t.contact.form.emailPlaceholder}
                   />
                   {errors.email && (
                     <p id="email-error" className="mt-1 text-sm text-red-400">{errors.email}</p>
@@ -205,7 +209,7 @@ export function Contact() {
 
                 <div>
                   <label htmlFor="message" className="block text-sm font-medium text-white mb-2">
-                    Message *
+                    {t.contact.form.message} *
                   </label>
                   <textarea
                     id="message"
@@ -215,10 +219,9 @@ export function Contact() {
                     required
                     rows={6}
                     aria-describedby={errors.message ? "message-error" : undefined}
-                    className={`w-full px-4 py-3 bg-white/10 border rounded-lg text-white placeholder-gray-400 focus:ring-2 focus:ring-cyan-400 focus:border-transparent transition-all duration-300 backdrop-blur-sm resize-none ${
-                      errors.message ? 'border-red-400' : 'border-white/20'
-                    }`}
-                    placeholder="Tell me about your project or opportunity..."
+                    className={`w-full px-4 py-3 bg-white/10 border rounded-lg text-white placeholder-gray-400 focus:ring-2 focus:ring-cyan-400 focus:border-transparent transition-all duration-300 backdrop-blur-sm resize-none ${errors.message ? 'border-red-400' : 'border-white/20'
+                      }`}
+                    placeholder={t.contact.form.messagePlaceholder}
                   />
                   {errors.message && (
                     <p id="message-error" className="mt-1 text-sm text-red-400">{errors.message}</p>
@@ -236,10 +239,10 @@ export function Contact() {
                         <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
                         <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
                       </svg>
-                      Sending...
+                      {t.contact.form.sending}
                     </>
                   ) : (
-                    'Send Message'
+                    t.contact.form.send
                   )}
                 </button>
               </form>

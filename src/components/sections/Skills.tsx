@@ -1,3 +1,7 @@
+"use client";
+
+import { useLanguage } from "@/context/LanguageContext";
+
 const skillCategories = {
   "Backend": [
     "Node.js (Express)",
@@ -30,19 +34,20 @@ const skillCategories = {
 };
 
 export function Skills() {
+  const { t } = useLanguage();
   return (
     <section id="skills" className="py-24 cosmic-section">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         {/* Cosmic Section Header */}
         <div className="text-center mb-16">
           <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">
-            <span className="bg-gradient-to-r from-blue-400 via-cyan-400 to-sky-400 bg-clip-text text-transparent cosmic-glow">
-              Technical Skills
+            <span className="bg-gradient-to-r from-blue-400 via-cyan-400 to-sky-400 bg-clip-text text-transparent cosmic-glow font-orbitron">
+              {t.skills.title}
             </span>
           </h2>
           <div className="w-16 h-1 bg-gradient-to-r from-blue-400 via-cyan-400 to-sky-400 mx-auto rounded-full mb-6"></div>
           <p className="text-lg text-gray-400 max-w-2xl mx-auto">
-            Mastering the cosmic toolkit to build stellar digital solutions
+            {t.skills.subtitle}
           </p>
         </div>
 
@@ -61,8 +66,9 @@ export function Skills() {
                       {category.charAt(0)}
                     </span>
                   </div>
-                  <h3 className="text-2xl font-bold text-white group-hover:text-indigo-300 transition-colors duration-300">
-                    {category}
+                  <h3 className="text-2xl font-bold text-white group-hover:text-indigo-300 transition-colors duration-300 font-orbitron">
+                    {/* Map category key to translated category name */}
+                    {t.skills.categories[category.toLowerCase() as keyof typeof t.skills.categories] || category}
                   </h3>
                 </div>
                 {/* Skills Tags */}

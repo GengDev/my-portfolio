@@ -2,6 +2,213 @@
 
 @theme inline {
   --font-inter: var(--font-inter);
+  --font-orbitron: var(--font-orbitron);
+}
+
+.font-orbitron {
+  font-family: var(--font-orbitron), sans-serif;
+}
+
+/* Glitch Effect */
+.glitch-text {
+  position: relative;
+}
+
+.glitch-text::before,
+.glitch-text::after {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: black;
+}
+
+.glitch-text::before {
+  left: 2px;
+  text-shadow: -1px 0 #ff00c1;
+  clip: rect(44px, 450px, 56px, 0);
+  animation: glitch-anim 5s infinite linear alternate-reverse;
+}
+
+.glitch-text::after {
+  left: -2px;
+  text-shadow: -1px 0 #00fff9;
+  clip: rect(44px, 450px, 56px, 0);
+  animation: glitch-anim2 5s infinite linear alternate-reverse;
+}
+
+@keyframes glitch-anim {
+  0% {
+    clip: rect(32px, 9999px, 88px, 0);
+  }
+
+  5% {
+    clip: rect(62px, 9999px, 12px, 0);
+  }
+
+  10% {
+    clip: rect(93px, 9999px, 4px, 0);
+  }
+
+  15% {
+    clip: rect(10px, 9999px, 66px, 0);
+  }
+
+  20% {
+    clip: rect(69px, 9999px, 82px, 0);
+  }
+
+  25% {
+    clip: rect(51px, 9999px, 20px, 0);
+  }
+
+  30% {
+    clip: rect(16px, 9999px, 5px, 0);
+  }
+
+  35% {
+    clip: rect(9px, 9999px, 2px, 0);
+  }
+
+  40% {
+    clip: rect(82px, 9999px, 78px, 0);
+  }
+
+  45% {
+    clip: rect(5px, 9999px, 86px, 0);
+  }
+
+  50% {
+    clip: rect(28px, 9999px, 5px, 0);
+  }
+
+  55% {
+    clip: rect(72px, 9999px, 44px, 0);
+  }
+
+  60% {
+    clip: rect(99px, 9999px, 53px, 0);
+  }
+
+  65% {
+    clip: rect(19px, 9999px, 11px, 0);
+  }
+
+  70% {
+    clip: rect(42px, 9999px, 87px, 0);
+  }
+
+  75% {
+    clip: rect(31px, 9999px, 96px, 0);
+  }
+
+  80% {
+    clip: rect(65px, 9999px, 16px, 0);
+  }
+
+  85% {
+    clip: rect(74px, 9999px, 41px, 0);
+  }
+
+  90% {
+    clip: rect(36px, 9999px, 74px, 0);
+  }
+
+  95% {
+    clip: rect(86px, 9999px, 35px, 0);
+  }
+
+  100% {
+    clip: rect(21px, 9999px, 63px, 0);
+  }
+}
+
+@keyframes glitch-anim2 {
+  0% {
+    clip: rect(65px, 9999px, 100px, 0);
+  }
+
+  5% {
+    clip: rect(52px, 9999px, 74px, 0);
+  }
+
+  10% {
+    clip: rect(79px, 9999px, 85px, 0);
+  }
+
+  15% {
+    clip: rect(81px, 9999px, 54px, 0);
+  }
+
+  20% {
+    clip: rect(32px, 9999px, 34px, 0);
+  }
+
+  25% {
+    clip: rect(3px, 9999px, 44px, 0);
+  }
+
+  30% {
+    clip: rect(6px, 9999px, 3px, 0);
+  }
+
+  35% {
+    clip: rect(58px, 9999px, 38px, 0);
+  }
+
+  40% {
+    clip: rect(58px, 9999px, 66px, 0);
+  }
+
+  45% {
+    clip: rect(41px, 9999px, 4px, 0);
+  }
+
+  50% {
+    clip: rect(27px, 9999px, 96px, 0);
+  }
+
+  55% {
+    clip: rect(61px, 9999px, 83px, 0);
+  }
+
+  60% {
+    clip: rect(17px, 9999px, 41px, 0);
+  }
+
+  65% {
+    clip: rect(18px, 9999px, 49px, 0);
+  }
+
+  70% {
+    clip: rect(12px, 9999px, 20px, 0);
+  }
+
+  75% {
+    clip: rect(39px, 9999px, 4px, 0);
+  }
+
+  80% {
+    clip: rect(37px, 9999px, 62px, 0);
+  }
+
+  85% {
+    clip: rect(48px, 9999px, 16px, 0);
+  }
+
+  90% {
+    clip: rect(98px, 9999px, 60px, 0);
+  }
+
+  95% {
+    clip: rect(1px, 9999px, 4px, 0);
+  }
+
+  100% {
+    clip: rect(81px, 9999px, 4px, 0);
+  }
 }
 
 body {
@@ -20,7 +227,8 @@ html {
   height: 100%;
 }
 
-html, body {
+html,
+body {
   overflow-x: hidden;
   overflow-y: auto;
 }
@@ -62,6 +270,7 @@ html, body {
     opacity: 0;
     transform: translateY(20px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -73,6 +282,7 @@ html, body {
     opacity: 0;
     transform: translateY(30px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -85,11 +295,13 @@ html, body {
     transform: scale(0.8) translateY(50px) rotateX(20deg);
     filter: blur(10px);
   }
+
   60% {
     opacity: 0.8;
     transform: scale(1.05) translateY(-10px) rotateX(0deg);
     filter: blur(2px);
   }
+
   100% {
     opacity: 1;
     transform: scale(1) translateY(0) rotateX(0deg);
@@ -102,6 +314,7 @@ html, body {
     opacity: 0;
     transform: translateX(-100px) scale(0.9);
   }
+
   to {
     opacity: 1;
     transform: translateX(0) scale(1);
@@ -113,6 +326,7 @@ html, body {
     opacity: 0;
     transform: translateX(100px) scale(0.9);
   }
+
   to {
     opacity: 1;
     transform: translateX(0) scale(1);
@@ -120,9 +334,12 @@ html, body {
 }
 
 @keyframes glowPulse {
-  0%, 100% {
+
+  0%,
+  100% {
     box-shadow: 0 0 20px rgba(16, 185, 129, 0.3);
   }
+
   50% {
     box-shadow: 0 0 40px rgba(16, 185, 129, 0.6), 0 0 60px rgba(16, 185, 129, 0.3);
   }
@@ -132,6 +349,7 @@ html, body {
   0% {
     background-position: -200% center;
   }
+
   100% {
     background-position: 200% center;
   }
@@ -143,13 +361,33 @@ html, body {
 }
 
 /* Section stagger animations with epic effects */
-.section-fade-in:nth-child(1) { animation-delay: 0.2s; }
-.section-fade-in:nth-child(2) { animation-delay: 0.6s; }
-.section-fade-in:nth-child(3) { animation-delay: 1.0s; }
-.section-fade-in:nth-child(4) { animation-delay: 1.4s; }
-.section-fade-in:nth-child(5) { animation-delay: 1.8s; }
-.section-fade-in:nth-child(6) { animation-delay: 2.2s; }
-.section-fade-in:nth-child(7) { animation-delay: 2.6s; }
+.section-fade-in:nth-child(1) {
+  animation-delay: 0.2s;
+}
+
+.section-fade-in:nth-child(2) {
+  animation-delay: 0.6s;
+}
+
+.section-fade-in:nth-child(3) {
+  animation-delay: 1.0s;
+}
+
+.section-fade-in:nth-child(4) {
+  animation-delay: 1.4s;
+}
+
+.section-fade-in:nth-child(5) {
+  animation-delay: 1.8s;
+}
+
+.section-fade-in:nth-child(6) {
+  animation-delay: 2.2s;
+}
+
+.section-fade-in:nth-child(7) {
+  animation-delay: 2.6s;
+}
 
 .section-fade-in {
   animation: epicEntrance 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
@@ -180,20 +418,23 @@ html, body {
 
 /* Text shimmer effect */
 .text-shimmer {
-  background: linear-gradient(
-    90deg,
-    transparent,
-    rgba(255, 255, 255, 0.4),
-    transparent
-  );
+  background: linear-gradient(90deg,
+      transparent,
+      rgba(255, 255, 255, 0.4),
+      transparent);
   background-size: 200% 100%;
   animation: textShimmer 2s infinite;
 }
 
 /* Loading spinner */
 @keyframes spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 .loading-spinner {
@@ -204,10 +445,13 @@ html, body {
 
 /* Stars twinkling animation */
 @keyframes twinkle {
-  0%, 100% {
+
+  0%,
+  100% {
     opacity: 0.3;
     transform: scale(1);
   }
+
   50% {
     opacity: 1;
     transform: scale(1.2);
@@ -216,18 +460,23 @@ html, body {
 
 /* Epic floating particles animation */
 @keyframes epicFloat {
-  0%, 100% {
+
+  0%,
+  100% {
     transform: translateY(0px) translateX(0px) rotate(0deg) scale(1);
     opacity: 0.7;
   }
+
   25% {
     transform: translateY(-20px) translateX(10px) rotate(90deg) scale(1.1);
     opacity: 1;
   }
+
   50% {
     transform: translateY(-10px) translateX(-5px) rotate(180deg) scale(0.9);
     opacity: 0.8;
   }
+
   75% {
     transform: translateY(-25px) translateX(15px) rotate(270deg) scale(1.2);
     opacity: 1;
@@ -236,10 +485,13 @@ html, body {
 
 /* Energy wave animation */
 @keyframes energyWave {
-  0%, 100% {
+
+  0%,
+  100% {
     transform: scale(1) rotate(0deg);
     opacity: 0.3;
   }
+
   50% {
     transform: scale(1.2) rotate(180deg);
     opacity: 0.8;
@@ -248,10 +500,13 @@ html, body {
 
 /* Cyberpunk pulse animation */
 @keyframes cosmicPulseEpic {
-  0%, 100% {
+
+  0%,
+  100% {
     box-shadow: 0 0 60px rgba(37, 99, 235, 0.8), 0 0 120px rgba(6, 182, 212, 0.4), 0 0 180px rgba(148, 163, 184, 0.2);
     transform: scale(1);
   }
+
   50% {
     box-shadow: 0 0 100px rgba(37, 99, 235, 1.2), 0 0 200px rgba(6, 182, 212, 0.8), 0 0 300px rgba(148, 163, 184, 0.4);
     transform: scale(1.05);
@@ -260,9 +515,12 @@ html, body {
 
 /* Cosmic glow pulse */
 @keyframes cosmicPulse {
-  0%, 100% {
+
+  0%,
+  100% {
     box-shadow: 0 0 20px rgba(99, 102, 241, 0.3);
   }
+
   50% {
     box-shadow: 0 0 40px rgba(99, 102, 241, 0.6), 0 0 60px rgba(168, 85, 247, 0.4);
   }
@@ -274,14 +532,17 @@ html, body {
     transform: translateX(-100px) translateY(-100px) scale(0);
     opacity: 0;
   }
+
   10% {
     opacity: 1;
     transform: scale(1);
   }
+
   90% {
     opacity: 1;
     transform: translateX(800px) translateY(600px) scale(1);
   }
+
   100% {
     opacity: 0;
     transform: translateX(900px) translateY(700px) scale(0);
@@ -290,15 +551,20 @@ html, body {
 
 /* Nebula drift animation */
 @keyframes nebulaDrift {
-  0%, 100% {
+
+  0%,
+  100% {
     transform: translateX(0) translateY(0) rotate(0deg);
   }
+
   25% {
     transform: translateX(20px) translateY(-10px) rotate(90deg);
   }
+
   50% {
     transform: translateX(-15px) translateY(15px) rotate(180deg);
   }
+
   75% {
     transform: translateX(10px) translateY(-5px) rotate(270deg);
   }
@@ -306,9 +572,12 @@ html, body {
 
 /* Aurora wave animation */
 @keyframes auroraWave {
-  0%, 100% {
+
+  0%,
+  100% {
     background-position: 0% 50%;
   }
+
   50% {
     background-position: 100% 50%;
   }
@@ -319,6 +588,7 @@ html, body {
   0% {
     transform: translateY(0px);
   }
+
   100% {
     transform: translateY(-2000px);
   }
@@ -330,12 +600,15 @@ html, body {
     transform: translateX(-100px) translateY(-100px);
     opacity: 0;
   }
+
   10% {
     opacity: 1;
   }
+
   90% {
     opacity: 1;
   }
+
   100% {
     transform: translateX(calc(100vw + 100px)) translateY(calc(100vh + 100px));
     opacity: 0;
@@ -627,4 +900,102 @@ html, body {
   top: 70%;
   left: 50%;
   animation-delay: 5s;
+}
+
+/* =========================================
+   WARP SPEED INTRO ANIMATIONS
+   ========================================= */
+
+@keyframes warpSpeedForward {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+
+  20% {
+    transform: scale(0.8);
+    opacity: 0.8;
+  }
+
+  50% {
+    transform: scale(4);
+    opacity: 0.5;
+    filter: blur(4px);
+  }
+
+  100% {
+    transform: scale(20);
+    opacity: 0;
+    filter: blur(20px);
+  }
+}
+
+@keyframes starStreak {
+  0% {
+    transform: translateZ(0) translateY(0);
+    opacity: 0.5;
+  }
+
+  100% {
+    transform: translateZ(1000px) translateY(-500px);
+    opacity: 0;
+  }
+}
+
+.warp-speed-active .stars-overlay {
+  animation: warpSpeedForward 1.5s cubic-bezier(0.7, 0, 0.84, 0) forwards;
+}
+
+/* Creating the star streak effect via radial gradient animation or pseudo-elements */
+.warp-speed-active::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 2px;
+  height: 2px;
+  background: white;
+  box-shadow:
+    0 0 10px white,
+    100px 100px 20px white,
+    -200px -150px 15px white,
+    300px 50px 25px white,
+    -100px 200px 10px white;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  animation: warpExplosion 1.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+  z-index: 60;
+}
+
+@keyframes warpExplosion {
+  0% {
+    transform: translate(-50%, -50%) scale(1);
+    box-shadow:
+      0 0 0 white,
+      0 0 0 white,
+      0 0 0 white,
+      0 0 0 white,
+      0 0 0 white;
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  100% {
+    transform: translate(-50%, -50%) scale(50);
+    box-shadow:
+      0 0 100px 20px white,
+      400px 400px 100px 10px white,
+      -800px -600px 150px 15px white,
+      1200px 200px 200px 20px white,
+      -400px 800px 80px 10px white;
+    opacity: 0;
+  }
+}
+
+/* Utility to hide scrollbar when intro is active */
+.overflow-hidden-important {
+  overflow: hidden !important;
 }

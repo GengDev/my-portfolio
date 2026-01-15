@@ -1,6 +1,11 @@
+"use client";
+
 import Image from "next/image";
+import { useLanguage } from "@/context/LanguageContext";
 
 export function About() {
+  const { t } = useLanguage();
+
   return (
     <section id="about" className="py-24 cosmic-section relative overflow-hidden">
 
@@ -8,13 +13,13 @@ export function About() {
         {/* Cosmic Section Header */}
         <div className="text-center mb-16">
           <h2 className="text-3xl lg:text-4xl font-bold text-white mb-6">
-            <span className="bg-gradient-to-r from-blue-400 via-cyan-400 to-sky-400 bg-clip-text text-transparent cosmic-glow">
-              About Me
+            <span className="bg-gradient-to-r from-blue-400 via-cyan-400 to-sky-400 bg-clip-text text-transparent cosmic-glow font-orbitron">
+              {t.about.title}
             </span>
           </h2>
           <div className="w-16 h-1 bg-gradient-to-r from-blue-400 via-cyan-400 to-sky-400 mx-auto rounded-full"></div>
           <p className="text-lg text-gray-400 mt-6 max-w-2xl mx-auto">
-            Exploring the digital cosmos, one line of code at a time
+            {t.about.subtitle}
           </p>
         </div>
 
@@ -23,18 +28,13 @@ export function About() {
           {/* Left Column - Personal Info */}
           <div className="space-y-8">
             <div>
-              <h3 className="text-2xl font-bold text-white mb-4">Who I Am</h3>
+              <h3 className="text-2xl font-bold text-white mb-4 font-orbitron">{t.about.whoIAm}</h3>
               <div className="space-y-4 text-gray-400 leading-relaxed">
                 <p>
-                  I&apos;m a dedicated full-stack developer with over 5 years of experience building
-                  scalable web applications and high-traffic e-commerce platforms. My journey
-                  in software development has been driven by a passion for solving complex problems
-                  and creating solutions that make a real impact.
+                  {t.about.p1}
                 </p>
                 <p>
-                  When I&apos;m not coding, you&apos;ll find me exploring new technologies, contributing to
-                  open-source projects, or sharing knowledge with the developer community. I believe
-                  in continuous learning and staying updated with the latest industry trends.
+                  {t.about.p2}
                 </p>
               </div>
             </div>
@@ -68,27 +68,27 @@ export function About() {
 
                 {/* Floating particles */}
                 <div className="absolute -top-2 -right-2 w-4 h-4 bg-indigo-400/30 rounded-full blur-sm animate-ping opacity-0 group-hover:opacity-100"></div>
-                <div className="absolute -bottom-2 -left-2 w-3 h-3 bg-cyan-400/30 rounded-full blur-sm animate-pulse opacity-0 group-hover:opacity-100" style={{animationDelay: '0.5s'}}></div>
+                <div className="absolute -bottom-2 -left-2 w-3 h-3 bg-cyan-400/30 rounded-full blur-sm animate-pulse opacity-0 group-hover:opacity-100" style={{ animationDelay: '0.5s' }}></div>
               </div>
             </div>
 
             {/* Cosmic Personal Details */}
             <div className="grid grid-cols-2 gap-6">
               <div className="bg-slate-800/50 rounded-xl p-4 border border-slate-700/50 hover:border-indigo-400/30 transition-all duration-300">
-                <div className="text-indigo-400 text-sm font-medium mb-1">Location</div>
-                <div className="text-white">Bangkok, Thailand</div>
+                <div className="text-indigo-400 text-sm font-medium mb-1">{t.about.location}</div>
+                <div className="text-white">{t.about.locationValue}</div>
               </div>
               <div className="bg-slate-800/50 rounded-xl p-4 border border-slate-700/50 hover:border-cyan-400/30 transition-all duration-300">
-                <div className="text-cyan-400 text-sm font-medium mb-1">Experience</div>
-                <div className="text-white">2.5+ Years</div>
+                <div className="text-cyan-400 text-sm font-medium mb-1">{t.about.experience}</div>
+                <div className="text-white">{t.about.experienceValue}</div>
               </div>
               <div className="bg-slate-800/50 rounded-xl p-4 border border-slate-700/50 hover:border-cyan-400/30 transition-all duration-300">
-                <div className="text-cyan-400 text-sm font-medium mb-1">Education</div>
-                <div className="text-white">Computer Science</div>
+                <div className="text-cyan-400 text-sm font-medium mb-1">{t.about.education}</div>
+                <div className="text-white">{t.about.educationValue}</div>
               </div>
               <div className="bg-slate-800/50 rounded-xl p-4 border border-slate-700/50 hover:border-cyan-400/30 transition-all duration-300">
-                <div className="text-cyan-400 text-sm font-medium mb-1">Interests</div>
-                <div className="text-white">Tech & Cosmos</div>
+                <div className="text-cyan-400 text-sm font-medium mb-1">{t.about.interests}</div>
+                <div className="text-white">{t.about.interestsValue}</div>
               </div>
             </div>
           </div>
@@ -96,57 +96,40 @@ export function About() {
           {/* Right Column - Skills & Expertise */}
           <div className="space-y-8">
             <div>
-              <h3 className="text-2xl font-bold text-white mb-6">What I Do</h3>
+              <h3 className="text-2xl font-bold text-white mb-6 font-orbitron">{t.about.whatIDo}</h3>
 
               {/* Cosmic Skills Grid */}
               <div className="grid grid-cols-1 gap-4">
-                <div className="bg-slate-800/50 rounded-xl p-6 border border-slate-700/50 hover:border-indigo-400/30 transition-colors duration-300 hover:scale-[1.02]">
-                  <div className="flex items-start gap-4">
-                    <div className="w-10 h-10 bg-indigo-500/20 rounded-lg flex items-center justify-center">
-                      <svg className="w-5 h-5 text-indigo-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
-                      </svg>
-                    </div>
-                    <div>
-                      <h4 className="text-lg font-semibold text-white mb-2">Full-Stack Development</h4>
-                      <p className="text-gray-400 text-sm leading-relaxed">
-                        Building complete web applications from frontend to backend, ensuring seamless user experiences.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="bg-slate-800/50 rounded-xl p-6 border border-slate-700/50 hover:border-cyan-400/30 transition-colors duration-300 hover:scale-[1.02]">
-                  <div className="flex items-start gap-4">
-                    <div className="w-10 h-10 bg-cyan-500/20 rounded-lg flex items-center justify-center">
-                      <svg className="w-5 h-5 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
-                      </svg>
-                    </div>
-                    <div>
-                      <h4 className="text-lg font-semibold text-white mb-2">Performance Optimization</h4>
-                      <p className="text-gray-400 text-sm leading-relaxed">
-                        Implementing advanced optimization techniques for fast loading and excellent user experience.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="bg-slate-800/50 rounded-xl p-6 border border-slate-700/50 hover:border-cyan-400/30 transition-colors duration-300 hover:scale-[1.02]">
-                  <div className="flex items-start gap-4">
-                    <div className="w-10 h-10 bg-cyan-500/20 rounded-lg flex items-center justify-center">
-                      <svg className="w-5 h-5 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
-                      </svg>
-                    </div>
-                    <div>
-                      <h4 className="text-lg font-semibold text-white mb-2">E-commerce Solutions</h4>
-                      <p className="text-gray-400 text-sm leading-relaxed">
-                        Developing comprehensive platforms with complex features and real-time inventory systems.
-                      </p>
+                {t.about.services.map((service, index) => (
+                  <div key={index} className="bg-slate-800/50 rounded-xl p-6 border border-slate-700/50 hover:border-indigo-400/30 transition-colors duration-300 hover:scale-[1.02]">
+                    <div className="flex items-start gap-4">
+                      <div className={`w-10 h-10 ${index === 1 ? 'bg-cyan-500/20' : 'bg-indigo-500/20'} rounded-lg flex items-center justify-center`}>
+                        {index === 0 && (
+                          <svg className="w-5 h-5 text-indigo-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+                          </svg>
+                        )}
+                        {index === 1 && (
+                          <svg className="w-5 h-5 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                          </svg>
+                        )}
+                        {index === 2 && (
+                          <svg className="w-5 h-5 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            {/* Icon for shopping bag/cart */}
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
+                          </svg>
+                        )}
+                      </div>
+                      <div>
+                        <h4 className="text-lg font-semibold text-white mb-2">{service.title}</h4>
+                        <p className="text-gray-400 text-sm leading-relaxed">
+                          {service.description}
+                        </p>
+                      </div>
                     </div>
                   </div>
-                </div>
+                ))}
               </div>
             </div>
           </div>

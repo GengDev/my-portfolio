@@ -1,13 +1,26 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Inter, Orbitron, Chakra_Petch } from "next/font/google";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
+import { Cursor } from "@/components/ui/Cursor";
+import { LanguageProvider } from "@/context/LanguageContext";
 import { ErrorBoundary } from "@/components/ui/ErrorBoundary";
 import "./globals.css";
 
 const inter = Inter({
   subsets: ["latin"],
   variable: "--font-inter",
+});
+
+const orbitron = Orbitron({
+  subsets: ["latin"],
+  variable: "--font-orbitron",
+});
+
+const chakra = Chakra_Petch({
+  subsets: ["thai", "latin"],
+  weight: ["300", "400", "500", "600", "700"],
+  variable: "--font-chakra",
 });
 
 export const metadata: Metadata = {
@@ -72,7 +85,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={inter.variable}>
+    <html lang="en" className={`${inter.variable} ${orbitron.variable} ${chakra.variable} cursor-none`}>
       <head>
         <script
           type="application/ld+json"
@@ -143,44 +156,47 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className="font-inter antialiased text-white min-h-screen flex flex-col relative overflow-auto" style={{background: 'radial-gradient(ellipse at center, rgba(99, 102, 241, 0.1) 0%, transparent 70%), linear-gradient(135deg, #0c0a1a 0%, #1a1625 50%, #2a2438 100%)'}}>
-        {/* Cosmic Background Effects */}
-        <div className="cosmic-particles">
-          <div className="cosmic-particle"></div>
-          <div className="cosmic-particle"></div>
-          <div className="cosmic-particle"></div>
-          <div className="cosmic-particle"></div>
-          <div className="cosmic-particle"></div>
-        </div>
+      <body className="font-inter antialiased text-white min-h-screen flex flex-col relative overflow-auto" style={{ background: 'radial-gradient(ellipse at center, rgba(99, 102, 241, 0.1) 0%, transparent 70%), linear-gradient(135deg, #0c0a1a 0%, #1a1625 50%, #2a2438 100%)' }}>
+        <LanguageProvider>
+          <Cursor />
+          {/* Cosmic Background Effects */}
+          <div className="cosmic-particles">
+            <div className="cosmic-particle"></div>
+            <div className="cosmic-particle"></div>
+            <div className="cosmic-particle"></div>
+            <div className="cosmic-particle"></div>
+            <div className="cosmic-particle"></div>
+          </div>
 
-        {/* Shooting Stars */}
-        <div className="shooting-star"></div>
-        <div className="shooting-star"></div>
-        <div className="shooting-star"></div>
+          {/* Shooting Stars */}
+          <div className="shooting-star"></div>
+          <div className="shooting-star"></div>
+          <div className="shooting-star"></div>
 
-        {/* Meteor Showers */}
-        <div className="meteor-shower"></div>
-        <div className="meteor-shower"></div>
-        <div className="meteor-shower"></div>
+          {/* Meteor Showers */}
+          <div className="meteor-shower"></div>
+          <div className="meteor-shower"></div>
+          <div className="meteor-shower"></div>
 
-        {/* Energy Waves */}
-        <div className="energy-wave"></div>
-        <div className="energy-wave"></div>
-        <div className="energy-wave"></div>
+          {/* Energy Waves */}
+          <div className="energy-wave"></div>
+          <div className="energy-wave"></div>
+          <div className="energy-wave"></div>
 
-        {/* Cosmic Energy Orbs */}
-        <div className="cosmic-orb"></div>
-        <div className="cosmic-orb"></div>
-        <div className="cosmic-orb"></div>
+          {/* Cosmic Energy Orbs */}
+          <div className="cosmic-orb"></div>
+          <div className="cosmic-orb"></div>
+          <div className="cosmic-orb"></div>
 
-        <ErrorBoundary>
-          <Header />
-          <main className="flex-1 relative z-10">
-            {children}
-          </main>
-          <Footer />
-        </ErrorBoundary>
+          <ErrorBoundary>
+            <Header />
+            <main className="flex-1 relative z-10">
+              {children}
+            </main>
+            <Footer />
+          </ErrorBoundary>
+        </LanguageProvider>
       </body>
-    </html>
+    </html >
   );
 }
