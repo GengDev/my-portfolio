@@ -159,11 +159,11 @@ export function Hero() {
           </div>
 
           {/* Right Content - Visual Element */}
-          <div className="lg:flex justify-center hidden slide-in-right">
+          <div className="flex justify-center mt-12 lg:mt-0 slide-in-right">
             <div className="relative">
               {/* Profile Image */}
               <div className="relative group">
-                <div className="w-96 h-96 rounded-3xl border border-emerald-400/30 overflow-hidden relative shadow-2xl shadow-emerald-500/10">
+                <div className="w-72 h-72 lg:w-96 lg:h-96 rounded-3xl border border-emerald-400/30 overflow-hidden relative shadow-2xl shadow-emerald-500/10">
                   <Image
                     src="/images/profile.jpg"
                     alt="Watchara Sritonwong - Full-Stack Developer"
