@@ -43,10 +43,10 @@ export function ProfessionalSummary() {
     return () => observer.disconnect();
   }, []);
   return (
-    <section id="summary" className="py-24 cosmic-section">
+    <section id="summary" className="py-20 md:py-24 cosmic-section">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         {/* Cosmic Section Header */}
-        <div className="text-center mb-16">
+        <div className="text-center mb-12 md:mb-16">
           <h2 className="text-3xl lg:text-4xl font-bold text-white mb-6 relative overflow-hidden">
             <span className="relative z-10 bg-gradient-to-r from-blue-400 via-cyan-400 to-sky-400 bg-clip-text text-transparent cosmic-glow font-orbitron">{t.summary.title}</span>
           </h2>
@@ -57,13 +57,13 @@ export function ProfessionalSummary() {
         <div ref={sectionRef} className="grid lg:grid-cols-0 gap-12 items-start">
           {/* Main Content */}
           <div className="lg:col-span-3 space-y-6">
-            <p className="text-lg text-gray-400 leading-relaxed hover:text-white transition-colors duration-300">
+            <p className="text-base md:text-lg text-gray-400 leading-relaxed hover:text-white transition-colors duration-300">
               {t.summary.p1}
             </p>
-            <p className="text-lg text-gray-400 leading-relaxed hover:text-white transition-colors duration-300">
+            <p className="text-base md:text-lg text-gray-400 leading-relaxed hover:text-white transition-colors duration-300">
               {t.summary.p2}
             </p>
-            <p className="text-lg text-gray-400 leading-relaxed hover:text-white transition-colors duration-300">
+            <p className="text-base md:text-lg text-gray-400 leading-relaxed hover:text-white transition-colors duration-300">
               {t.summary.p3}
             </p>
           </div>

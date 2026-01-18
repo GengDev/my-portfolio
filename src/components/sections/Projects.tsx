@@ -51,17 +51,17 @@ export function Projects() {
   }, []);
 
   return (
-    <section id="projects" className="py-24 cosmic-section">
+    <section id="projects" className="py-20 md:py-24 cosmic-section">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         {/* Cosmic Section Header */}
-        <div className="text-center mb-16">
-          <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">
+        <div className="text-center mb-12 md:mb-16">
+          <h2 className="text-3xl lg:text-5xl font-bold text-white mb-6">
             <span className="bg-gradient-to-r from-blue-400 via-cyan-400 to-sky-400 bg-clip-text text-transparent cosmic-glow font-orbitron">
               {t.projects.title}
             </span>
           </h2>
           <div className="w-16 h-1 bg-gradient-to-r from-blue-400 via-cyan-400 to-sky-400 mx-auto rounded-full mb-6"></div>
-          <p className="text-lg text-gray-400 max-w-2xl mx-auto">
+          <p className="text-base md:text-lg text-gray-400 max-w-2xl mx-auto">
             {t.projects.subtitle}
           </p>
         </div>
@@ -76,7 +76,7 @@ export function Projects() {
               {/* Project Card */}
               <div
                 ref={(el) => { cardsRef.current[index] = el }}
-                className="bg-slate-800/50 rounded-3xl p-8 border border-slate-700/50 hover:border-indigo-400/30 transition-transform duration-200 ease-out shadow-2xl hover:shadow-indigo-500/20 cosmic-glow"
+                className="bg-slate-800/50 rounded-3xl p-6 md:p-8 border border-slate-700/50 hover:border-indigo-400/30 transition-transform duration-200 ease-out shadow-2xl hover:shadow-indigo-500/20 cosmic-glow"
                 style={{ transformStyle: 'preserve-3d' }}
               >
                 {/* Project Image */}
@@ -98,8 +98,8 @@ export function Projects() {
                 </div>
 
                 {/* Project Title & Links */}
-                <div className="flex justify-between items-start mb-4">
-                  <h3 className="text-2xl font-bold text-white group-hover:text-indigo-300 transition-colors duration-300 font-orbitron" style={{ transform: 'translateZ(10px)' }}>
+                <div className="flex justify-between items-start mb-4 gap-4">
+                  <h3 className="text-xl md:text-2xl font-bold text-white group-hover:text-indigo-300 transition-colors duration-300 font-orbitron" style={{ transform: 'translateZ(10px)' }}>
                     {project.title}
                   </h3>
                   <div className="flex space-x-3 opacity-60 group-hover:opacity-100 transition-opacity duration-300">
@@ -142,7 +142,7 @@ export function Projects() {
                 </div>
 
                 {/* Description */}
-                <p className="text-gray-300 mb-6 leading-relaxed">
+                <p className="text-sm md:text-base text-gray-300 mb-6 leading-relaxed">
                   {project.description}
                 </p>
 

@@ -30,11 +30,11 @@ export function Hero() {
       </div>
 
       <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
-        <div className="grid lg:grid-cols-2 gap-16 items-center min-h-screen py-20">
+        <div className="grid lg:grid-cols-2 gap-16 items-center min-h-screen pt-32 pb-20 lg:py-20">
           {/* Left Content */}
           <div className="space-y-8 slide-in-left">
             {/* Epic Cosmic Status Badge */}
-            <div className="relative group">
+            <div className="relative group mt-8 lg:mt-0">
               <div className="absolute -inset-1 bg-gradient-to-r from-blue-500 via-cyan-500 to-sky-500 rounded-full opacity-0 group-hover:opacity-20 transition-opacity duration-500 blur-lg animate-pulse"></div>
               <div className="relative inline-flex items-center px-6 py-3 bg-black/50 backdrop-blur-xl border border-indigo-400/30 rounded-full text-sm text-indigo-300 font-semibold cosmic-glow shadow-lg shadow-indigo-500/20">
                 <div className="w-3 h-3 bg-gradient-to-r from-indigo-400 to-cyan-400 rounded-full mr-3 animate-pulse shadow-lg shadow-indigo-400/50"></div>

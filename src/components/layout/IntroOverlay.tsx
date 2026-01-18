@@ -13,7 +13,7 @@ export const IntroOverlay = ({ onEnter }: IntroOverlayProps) => {
   const [statusText, setStatusText] = useState("");
   const [isScanning, setIsScanning] = useState(false);
 
-  const fullText = "SYSTEM_READY... INITIALIZING_COSMIC_INTERFACE... ACCESS_GRANTED";
+  const fullText = "SYSTEM_READY... PREPARING_PORTFOLIO_EXPERIENCE... ACCESS_GRANTED";
 
   useEffect(() => {
     let index = 0;
@@ -48,17 +48,17 @@ export const IntroOverlay = ({ onEnter }: IntroOverlayProps) => {
       </div>
 
       {/* Screen Corners HUD */}
-      <div className={`fixed inset-10 z-20 pointer-events-none border border-cyan-500/10 transition-all duration-1000 ${isExiting ? 'scale-150 opacity-0' : 'opacity-100'}`}>
-        <div className="absolute top-0 left-0 w-8 h-8 border-t-2 border-l-2 border-cyan-500 animate-pulse"></div>
-        <div className="absolute top-0 right-0 w-8 h-8 border-t-2 border-r-2 border-cyan-500 animate-pulse"></div>
-        <div className="absolute bottom-0 left-0 w-8 h-8 border-b-2 border-l-2 border-cyan-500 animate-pulse"></div>
-        <div className="absolute bottom-0 right-0 w-8 h-8 border-b-2 border-r-2 border-cyan-500 animate-pulse"></div>
+      <div className={`fixed inset-4 md:inset-10 z-20 pointer-events-none border border-cyan-500/10 transition-all duration-1000 ${isExiting ? 'scale-150 opacity-0' : 'opacity-100'}`}>
+        <div className="absolute top-0 left-0 w-4 h-4 md:w-8 md:h-8 border-t-2 border-l-2 border-cyan-500 animate-pulse"></div>
+        <div className="absolute top-0 right-0 w-4 h-4 md:w-8 md:h-8 border-t-2 border-r-2 border-cyan-500 animate-pulse"></div>
+        <div className="absolute bottom-0 left-0 w-4 h-4 md:w-8 md:h-8 border-b-2 border-l-2 border-cyan-500 animate-pulse"></div>
+        <div className="absolute bottom-0 right-0 w-4 h-4 md:w-8 md:h-8 border-b-2 border-r-2 border-cyan-500 animate-pulse"></div>
 
         {/* Small HUD Text */}
-        <div className="absolute top-2 left-4 font-mono text-[10px] text-cyan-500/40 uppercase tracking-[0.2em]">
+        <div className="absolute top-2 left-2 md:left-4 font-mono text-[8px] md:text-[10px] text-cyan-500/40 uppercase tracking-[0.1em] md:tracking-[0.2em]">
           Initialization Phase: {Math.min(100, Math.floor((statusText.length / fullText.length) * 100))}%
         </div>
-        <div className="absolute bottom-2 right-4 font-mono text-[10px] text-cyan-500/40 uppercase tracking-[0.2em]">
+        <div className="absolute bottom-2 right-2 md:right-4 font-mono text-[8px] md:text-[10px] text-cyan-500/40 uppercase tracking-[0.1em] md:tracking-[0.2em]">
           Loc: 13.7563° N, 100.5018° E
         </div>
       </div>
@@ -77,7 +77,7 @@ export const IntroOverlay = ({ onEnter }: IntroOverlayProps) => {
           <div className="absolute -inset-2 bg-cyan-500 blur-xl opacity-0 group-hover:opacity-20 transition-opacity"></div>
           <div className="relative border border-cyan-500/30 bg-black/50 backdrop-blur-md px-6 py-1.5 rounded-sm text-cyan-400 text-[10px] font-mono tracking-[0.3em] uppercase transition-all duration-300 group-hover:border-cyan-400 group-hover:text-cyan-300">
             <span className="inline-block w-1.5 h-1.5 bg-cyan-500 rounded-full mr-3 animate-pulse"></span>
-            Interface Status: Optimal
+            System Status: Ready
           </div>
         </div>
 
@@ -117,21 +117,21 @@ export const IntroOverlay = ({ onEnter }: IntroOverlayProps) => {
           {/* Identification Label */}
           <div className={`absolute -bottom-6 left-1/2 -translate-x-1/2 flex items-center space-x-2 transition-all duration-1000 ${isScanning ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
             <span className="w-1.5 h-1.5 bg-green-500 rounded-full animate-pulse"></span>
-            <span className="text-[10px] font-mono text-cyan-400/80 tracking-widest uppercase">Identity Verified</span>
+            <span className="text-[10px] font-mono text-cyan-400/80 tracking-widest uppercase">Access Verified</span>
           </div>
         </div>
 
         {/* Main Title with Glitch */}
         <div className="relative mb-6 group cursor-default">
-          <h1 className="text-6xl md:text-8xl font-black text-white tracking-tighter relative inline-block">
+          <h1 className="text-4xl md:text-8xl font-black text-white tracking-tighter relative inline-block">
             <span className="relative z-10 bg-clip-text text-transparent bg-gradient-to-r from-white via-cyan-100 to-white group-hover:animate-glitch-skew">
               PORTFOLIO
             </span>
             {/* Holographic Shadows */}
-            <span className="absolute top-0 left-0 -ml-1 text-cyan-500/30 blur-sm group-hover:animate-glitch-subtle -z-0">PORTFOLIO</span>
-            <span className="absolute top-0 left-0 ml-1 text-blue-500/30 blur-sm group-hover:animate-glitch-subtle-2 -z-0">PORTFOLIO</span>
+            <span className="absolute top-0 left-0 -ml-0.5 md:-ml-1 text-cyan-500/30 blur-sm group-hover:animate-glitch-subtle -z-0">PORTFOLIO</span>
+            <span className="absolute top-0 left-0 ml-0.5 md:ml-1 text-blue-500/30 blur-sm group-hover:animate-glitch-subtle-2 -z-0">PORTFOLIO</span>
           </h1>
-          <span className="block text-xl md:text-2xl font-light text-cyan-500/40 mt-1 tracking-[0.8em] md:tracking-[1.2em] uppercase font-mono">
+          <span className="block text-sm md:text-2xl font-light text-cyan-500/40 mt-1 tracking-[0.4em] md:tracking-[1.2em] uppercase font-mono">
             Experience
           </span>
         </div>
@@ -147,11 +147,11 @@ export const IntroOverlay = ({ onEnter }: IntroOverlayProps) => {
         {/* Enter Button HUD Style */}
         <button
           onClick={handleEnterClick}
-          className="group relative px-12 py-5 bg-transparent overflow-hidden focus:outline-none transition-all duration-500 active:scale-95"
+          className="group relative px-6 py-4 md:px-12 md:py-5 bg-transparent overflow-hidden focus:outline-none transition-all duration-500 active:scale-95"
         >
           {/* HUD Border segments */}
-          <div className="absolute top-0 left-0 w-4 h-full border-l border-cyan-500/50 group-hover:h-full transition-all duration-300"></div>
-          <div className="absolute top-0 right-0 w-4 h-full border-r border-cyan-500/50 transition-all"></div>
+          <div className="absolute top-0 left-0 w-2 md:w-4 h-full border-l border-cyan-500/50 transition-all duration-300"></div>
+          <div className="absolute top-0 right-0 w-2 md:w-4 h-full border-r border-cyan-500/50 transition-all"></div>
           <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-cyan-500 via-transparent to-cyan-500 opacity-30"></div>
           <div className="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-cyan-500 via-transparent to-cyan-500 opacity-30"></div>
 
@@ -160,10 +160,10 @@ export const IntroOverlay = ({ onEnter }: IntroOverlayProps) => {
           <div className="absolute bottom-0 left-0 w-full h-0.5 bg-cyan-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-700"></div>
 
           {/* Button Content */}
-          <div className="relative flex items-center justify-center space-x-4">
-            <Rocket className="w-5 h-5 text-cyan-400 group-hover:scale-125 group-hover:-translate-y-1 transition-all duration-500" />
-            <span className="text-cyan-400 font-mono text-xs md:text-sm font-bold tracking-[0.5em] group-hover:text-white transition-colors duration-300">
-              ESTABLISH_LINK
+          <div className="relative flex items-center justify-center space-x-2 md:space-x-4">
+            <Rocket className="w-4 h-4 md:w-5 md:h-5 text-cyan-400 group-hover:scale-125 group-hover:-translate-y-1 transition-all duration-500" />
+            <span className="text-cyan-400 font-mono text-[10px] md:text-sm font-bold tracking-[0.3em] md:tracking-[0.5em] group-hover:text-white transition-colors duration-300">
+              ENTER EXPERIENCE
             </span>
           </div>
 
@@ -176,17 +176,17 @@ export const IntroOverlay = ({ onEnter }: IntroOverlayProps) => {
       </div>
 
       {/* Decorative Footer HUD */}
-      <div className="absolute bottom-10 z-20 w-full px-10 flex justify-between items-end">
+      <div className="absolute bottom-4 md:bottom-10 z-20 w-full px-6 md:px-10 flex justify-between items-end">
         <div className="flex flex-col space-y-1 opacity-40">
-          <div className="h-0.5 w-24 bg-gradient-to-r from-cyan-500 to-transparent"></div>
-          <span className="text-[8px] font-mono text-cyan-400 uppercase tracking-widest">Protocol: Neural_Gate_v4.2</span>
+          <div className="h-0.5 w-16 md:w-24 bg-gradient-to-r from-cyan-500 to-transparent"></div>
+          <span className="text-[6px] md:text-[8px] font-mono text-cyan-400 uppercase tracking-widest">Portfolio Version: 2024.4.2</span>
         </div>
-        <div className="flex items-center space-x-6">
+        <div className="flex items-center space-x-3 md:space-x-6">
           <div className="flex flex-col items-end space-y-1 opacity-40">
-            <span className="text-[8px] font-mono text-cyan-400 uppercase tracking-widest text-right">Secure Uplink: Established</span>
-            <div className="h-0.5 w-16 bg-gradient-to-l from-cyan-500 to-transparent"></div>
+            <span className="text-[6px] md:text-[8px] font-mono text-cyan-400 uppercase tracking-widest text-right">Connection: Secure</span>
+            <div className="h-0.5 w-12 md:w-16 bg-gradient-to-l from-cyan-500 to-transparent"></div>
           </div>
-          <Zap className="w-4 h-4 text-cyan-500 animate-pulse" />
+          <Zap className="w-3 h-3 md:w-4 md:h-4 text-cyan-500 animate-pulse" />
         </div>
       </div>
     </div>

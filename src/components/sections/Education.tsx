@@ -5,17 +5,17 @@ import { useLanguage } from "@/context/LanguageContext";
 export function Education() {
   const { t } = useLanguage();
   return (
-    <section id="education" className="py-24 cosmic-section">
+    <section id="education" className="py-20 md:py-24 cosmic-section">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         {/* Section Header */}
-        <div className="text-center mb-16">
-          <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">
+        <div className="text-center mb-12 md:mb-16">
+          <h2 className="text-3xl lg:text-5xl font-bold text-white mb-6">
             <span className="bg-gradient-to-r from-blue-400 via-cyan-400 to-sky-400 bg-clip-text text-transparent cosmic-glow font-orbitron">
               {t.education.title}
             </span>
           </h2>
           <div className="w-16 h-1 bg-gradient-to-r from-blue-400 via-cyan-400 to-sky-400 mx-auto rounded-full mb-6"></div>
-          <p className="text-lg text-gray-400 max-w-2xl mx-auto">
+          <p className="text-base md:text-lg text-gray-400 max-w-2xl mx-auto">
             {t.education.subtitle}
           </p>
         </div>
@@ -24,24 +24,24 @@ export function Education() {
         <div className="max-w-4xl mx-auto space-y-8">
           {t.education.items.map((edu, index) => (
             <div key={index} className="relative">
-              <div className="bg-slate-800/50 rounded-3xl p-8 border border-slate-700/50 hover:border-cyan-400/30 transition-all duration-500 hover:shadow-2xl hover:shadow-cyan-500/20">
+              <div className="bg-slate-800/50 rounded-3xl p-6 md:p-8 border border-slate-700/50 hover:border-cyan-400/30 transition-all duration-500 hover:shadow-2xl hover:shadow-cyan-500/20">
                 {/* Timeline Dot */}
-                <div className={`absolute -left-4 top-8 w-8 h-8 bg-gradient-to-r ${index === 0 ? 'from-blue-500 to-cyan-500' : 'from-sky-500 to-cyan-500'} rounded-full border-4 border-black flex items-center justify-center`}>
-                  <div className="w-3 h-3 bg-white rounded-full"></div>
+                <div className={`absolute -left-3 md:-left-4 top-8 w-6 h-6 md:w-8 md:h-8 bg-gradient-to-r ${index === 0 ? 'from-blue-500 to-cyan-500' : 'from-sky-500 to-cyan-500'} rounded-full border-4 border-black flex items-center justify-center`}>
+                  <div className="w-2 h-2 md:w-3 md:h-3 bg-white rounded-full"></div>
                 </div>
 
                 <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between mb-6">
                   <div className="mb-4 lg:mb-0">
                     <div className="flex items-center gap-4 mb-2">
-                      <div className={`w-16 h-16 bg-gradient-to-r ${index === 0 ? 'from-blue-500 to-cyan-500' : 'from-sky-500 to-cyan-500'} rounded-2xl flex items-center justify-center`}>
-                        <span className="text-white font-bold text-xl">{edu.icon}</span>
+                      <div className={`w-12 h-12 md:w-16 md:h-16 bg-gradient-to-r ${index === 0 ? 'from-blue-500 to-cyan-500' : 'from-sky-500 to-cyan-500'} rounded-2xl flex items-center justify-center flex-shrink-0`}>
+                        <span className="text-white font-bold text-lg md:text-xl">{edu.icon}</span>
                       </div>
                       <div>
-                        <h3 className="text-xl lg:text-2xl font-bold text-white font-orbitron">{edu.degree}</h3>
-                        <p className={`${index === 0 ? 'text-cyan-400' : 'text-sky-400'} font-semibold`}>{edu.school}</p>
+                        <h3 className="text-lg md:text-2xl font-bold text-white font-orbitron">{edu.degree}</h3>
+                        <p className={`${index === 0 ? 'text-cyan-400' : 'text-sky-400'} font-semibold text-sm md:text-base`}>{edu.school}</p>
                       </div>
                     </div>
-                    <p className="text-gray-500 text-sm">{edu.year}</p>
+                    <p className="text-gray-500 text-xs md:text-sm">{edu.year}</p>
                   </div>
 
                   <div className="flex flex-col gap-3">

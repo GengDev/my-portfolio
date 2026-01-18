@@ -88,11 +88,11 @@ export function Contact() {
     <section id="contact" className="py-20 cosmic-section relative overflow-hidden">
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="max-w-3xl mx-auto text-center mb-16">
-          <h2 className="text-4xl sm:text-5xl font-bold text-white mb-4 bg-gradient-to-r from-blue-400 via-cyan-400 to-sky-400 bg-clip-text text-transparent cosmic-glow font-orbitron">
+        <div className="max-w-3xl mx-auto text-center mb-12 md:mb-16">
+          <h2 className="text-3xl sm:text-5xl font-bold text-white mb-4 bg-gradient-to-r from-blue-400 via-cyan-400 to-sky-400 bg-clip-text text-transparent cosmic-glow font-orbitron">
             {t.contact.title}
           </h2>
-          <p className="text-lg text-gray-300">
+          <p className="text-base sm:text-lg text-gray-300">
             {t.contact.subtitle}
           </p>
         </div>
@@ -100,7 +100,7 @@ export function Contact() {
         <div className="grid lg:grid-cols-2 gap-12">
           {/* Contact Information */}
           <div className="space-y-8">
-            <h3 className="text-2xl font-semibold text-white mb-8 font-orbitron">{t.contact.navigate}</h3>
+            <h3 className="text-xl md:text-2xl font-semibold text-white mb-8 font-orbitron">{t.contact.navigate}</h3>
             <div className="space-y-6">
               {contactInfo.map((info, index) => {
                 const Icon = info.icon;
@@ -110,17 +110,17 @@ export function Contact() {
                 const value = info.label === 'Location' ? t.about.locationValue : info.value;
 
                 return (
-                  <div key={index} className="group flex items-center space-x-4 p-4 bg-white/5 backdrop-blur-sm rounded-xl border border-white/10 hover:bg-white/10 transition-all duration-300 hover:scale-105">
+                  <div key={index} className="group flex items-center space-x-4 p-3 md:p-4 bg-white/5 backdrop-blur-sm rounded-xl border border-white/10 hover:bg-white/10 transition-all duration-300 hover:scale-105">
                     <div className="flex-shrink-0">
                       <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
                         <Icon className="text-white" size={20} />
                       </div>
                     </div>
                     <div>
-                      <p className="text-sm font-medium text-gray-400 uppercase tracking-wide">{label}</p>
+                      <p className="text-[10px] md:text-sm font-medium text-gray-400 uppercase tracking-wide">{label}</p>
                       <a
                         href={info.href}
-                        className="text-white hover:text-indigo-300 transition-colors duration-300 text-lg font-medium"
+                        className="text-white hover:text-indigo-300 transition-colors duration-300 text-base md:text-lg font-medium break-all"
                       >
                         {value}
                       </a>
@@ -140,7 +140,7 @@ export function Contact() {
           {/* Contact Form */}
           <div className="relative">
             <div className="absolute -inset-1 bg-gradient-to-r from-cyan-500/20 to-blue-500/20 rounded-2xl blur"></div>
-            <div className="relative bg-white/10 backdrop-blur-lg p-8 rounded-2xl border border-white/20">
+            <div className="relative bg-white/10 backdrop-blur-lg p-6 md:p-8 rounded-2xl border border-white/20">
               <form onSubmit={handleSubmit} className="space-y-6">
                 {/* Success/Error Messages */}
                 {submitStatus === 'success' && (

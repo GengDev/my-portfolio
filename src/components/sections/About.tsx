@@ -7,18 +7,18 @@ export function About() {
   const { t } = useLanguage();
 
   return (
-    <section id="about" className="py-24 cosmic-section relative overflow-hidden">
+    <section id="about" className="py-20 md:py-24 cosmic-section relative overflow-hidden">
 
       <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
         {/* Cosmic Section Header */}
-        <div className="text-center mb-16">
+        <div className="text-center mb-12 md:mb-16">
           <h2 className="text-3xl lg:text-4xl font-bold text-white mb-6">
             <span className="bg-gradient-to-r from-blue-400 via-cyan-400 to-sky-400 bg-clip-text text-transparent cosmic-glow font-orbitron">
               {t.about.title}
             </span>
           </h2>
           <div className="w-16 h-1 bg-gradient-to-r from-blue-400 via-cyan-400 to-sky-400 mx-auto rounded-full"></div>
-          <p className="text-lg text-gray-400 mt-6 max-w-2xl mx-auto">
+          <p className="text-base md:text-lg text-gray-400 mt-6 max-w-2xl mx-auto">
             {t.about.subtitle}
           </p>
         </div>
@@ -28,8 +28,8 @@ export function About() {
           {/* Left Column - Personal Info */}
           <div className="space-y-8">
             <div>
-              <h3 className="text-2xl font-bold text-white mb-4 font-orbitron">{t.about.whoIAm}</h3>
-              <div className="space-y-4 text-gray-400 leading-relaxed">
+              <h3 className="text-xl md:text-2xl font-bold text-white mb-4 font-orbitron">{t.about.whoIAm}</h3>
+              <div className="space-y-4 text-sm md:text-base text-gray-400 leading-relaxed">
                 <p>
                   {t.about.p1}
                 </p>
@@ -73,22 +73,22 @@ export function About() {
             </div>
 
             {/* Cosmic Personal Details */}
-            <div className="grid grid-cols-2 gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6">
               <div className="bg-slate-800/50 rounded-xl p-4 border border-slate-700/50 hover:border-indigo-400/30 transition-all duration-300">
-                <div className="text-indigo-400 text-sm font-medium mb-1">{t.about.location}</div>
-                <div className="text-white">{t.about.locationValue}</div>
+                <div className="text-indigo-400 text-xs md:text-sm font-medium mb-1">{t.about.location}</div>
+                <div className="text-white text-sm md:text-base">{t.about.locationValue}</div>
               </div>
               <div className="bg-slate-800/50 rounded-xl p-4 border border-slate-700/50 hover:border-cyan-400/30 transition-all duration-300">
-                <div className="text-cyan-400 text-sm font-medium mb-1">{t.about.experience}</div>
-                <div className="text-white">{t.about.experienceValue}</div>
+                <div className="text-cyan-400 text-xs md:text-sm font-medium mb-1">{t.about.experience}</div>
+                <div className="text-white text-sm md:text-base">{t.about.experienceValue}</div>
               </div>
               <div className="bg-slate-800/50 rounded-xl p-4 border border-slate-700/50 hover:border-cyan-400/30 transition-all duration-300">
-                <div className="text-cyan-400 text-sm font-medium mb-1">{t.about.education}</div>
-                <div className="text-white">{t.about.educationValue}</div>
+                <div className="text-cyan-400 text-xs md:text-sm font-medium mb-1">{t.about.education}</div>
+                <div className="text-white text-sm md:text-base">{t.about.educationValue}</div>
               </div>
               <div className="bg-slate-800/50 rounded-xl p-4 border border-slate-700/50 hover:border-cyan-400/30 transition-all duration-300">
-                <div className="text-cyan-400 text-sm font-medium mb-1">{t.about.interests}</div>
-                <div className="text-white">{t.about.interestsValue}</div>
+                <div className="text-cyan-400 text-xs md:text-sm font-medium mb-1">{t.about.interests}</div>
+                <div className="text-white text-sm md:text-base">{t.about.interestsValue}</div>
               </div>
             </div>
           </div>
@@ -96,12 +96,12 @@ export function About() {
           {/* Right Column - Skills & Expertise */}
           <div className="space-y-8">
             <div>
-              <h3 className="text-2xl font-bold text-white mb-6 font-orbitron">{t.about.whatIDo}</h3>
+              <h3 className="text-xl md:text-2xl font-bold text-white mb-6 font-orbitron">{t.about.whatIDo}</h3>
 
               {/* Cosmic Skills Grid */}
               <div className="grid grid-cols-1 gap-4">
                 {t.about.services.map((service, index) => (
-                  <div key={index} className="bg-slate-800/50 rounded-xl p-6 border border-slate-700/50 hover:border-indigo-400/30 transition-colors duration-300 hover:scale-[1.02]">
+                  <div key={index} className="bg-slate-800/50 rounded-xl p-5 md:p-6 border border-slate-700/50 hover:border-indigo-400/30 transition-colors duration-300 hover:scale-[1.02]">
                     <div className="flex items-start gap-4">
                       <div className={`w-10 h-10 ${index === 1 ? 'bg-cyan-500/20' : 'bg-indigo-500/20'} rounded-lg flex items-center justify-center`}>
                         {index === 0 && (
