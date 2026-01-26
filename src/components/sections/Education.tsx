@@ -5,12 +5,12 @@ import { useLanguage } from "@/context/LanguageContext";
 export function Education() {
   const { t } = useLanguage();
   return (
-    <section id="education" className="py-20 md:py-24 cosmic-section">
+    <section id="education" className="py-20 md:py-24 standard-section">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center mb-12 md:mb-16">
           <h2 className="text-3xl lg:text-5xl font-bold text-white mb-6">
-            <span className="bg-gradient-to-r from-blue-400 via-cyan-400 to-sky-400 bg-clip-text text-transparent cosmic-glow font-orbitron">
+            <span className="bg-gradient-to-r from-blue-400 via-cyan-400 to-sky-400 bg-clip-text text-transparent text-glow font-orbitron">
               {t.education.title}
             </span>
           </h2>

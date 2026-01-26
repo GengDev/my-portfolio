@@ -85,11 +85,11 @@ export function Contact() {
   };
 
   return (
-    <section id="contact" className="py-20 cosmic-section relative overflow-hidden">
+    <section id="contact" className="py-20 standard-section relative overflow-hidden">
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="max-w-3xl mx-auto text-center mb-12 md:mb-16">
-          <h2 className="text-3xl sm:text-5xl font-bold text-white mb-4 bg-gradient-to-r from-blue-400 via-cyan-400 to-sky-400 bg-clip-text text-transparent cosmic-glow font-orbitron">
+          <h2 className="text-3xl sm:text-5xl font-bold text-white mb-4 bg-gradient-to-r from-blue-400 via-cyan-400 to-sky-400 bg-clip-text text-transparent text-glow font-orbitron">
             {t.contact.title}
           </h2>
           <p className="text-base sm:text-lg text-gray-300">

@@ -9,7 +9,7 @@ export function Footer() {
   const { t } = useLanguage();
   return (
     <footer className="bg-black/95 backdrop-blur-3xl border-t border-blue-500/20 relative overflow-hidden">
-      {/* Epic Cyberpunk Background */}
+      {/* Footer Background */}
       <div className="absolute inset-0 bg-gradient-to-t from-black via-blue-950/50 to-cyan-950/30"></div>
 
       {/* Animated star field */}
@@ -17,18 +17,20 @@ export function Footer() {
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_50%,rgba(30,64,175,0.4)_1px,transparent_1px),radial-gradient(circle_at_80%_20%,rgba(6,182,212,0.3)_1px,transparent_1px),radial-gradient(circle_at_40%_80%,rgba(148,163,184,0.3)_1px,transparent_1px)] bg-[size:120px_120px] animate-pulse"></div>
       </div>
 
-      {/* Animated cyberpunk border */}
+      {/* Footer border */}
       <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-blue-400 via-cyan-400 to-transparent animate-pulse"></div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 relative z-10">
         <div className="text-center mb-12">
-          {/* Epic Footer Title */}
+          {/* Footer Title */}
           <h3 className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-blue-400 via-cyan-400 to-slate-300 bg-clip-text text-transparent mb-4 font-orbitron">
             {t.footer.title}
           </h3>
-          <p className="text-white/70 max-w-md mx-auto">
-            {t.footer.subtitle}
-          </p>
+          {t.footer.subtitle && (
+            <p className="text-white/70 max-w-md mx-auto">
+              {t.footer.subtitle}
+            </p>
+          )}
         </div>
 
         <div className="flex flex-col md:flex-row justify-between items-center">
@@ -70,12 +72,12 @@ export function Footer() {
           </div>
         </div>
 
-        {/* Epic Final Decorative Line */}
+        {/* Final Decorative Line */}
         <div className="mt-16 relative">
           <div className="w-full h-px bg-gradient-to-r from-transparent via-white/20 to-transparent"></div>
           <div className="absolute inset-0 h-px bg-gradient-to-r from-transparent via-cyan-400/50 to-transparent animate-pulse"></div>
 
-          {/* Center cyberpunk emblem */}
+          {/* Center decorative emblem */}
           <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-12 h-12 rounded-full border border-white/20 flex items-center justify-center">
             <div className="w-6 h-6 rounded-full bg-gradient-to-r from-blue-500 to-cyan-500 animate-pulse"></div>
           </div>

@@ -51,12 +51,12 @@ export function Projects() {
   }, []);
 
   return (
-    <section id="projects" className="py-20 md:py-24 cosmic-section">
+    <section id="projects" className="py-20 md:py-24 standard-section">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
-        {/* Cosmic Section Header */}
+        {/* Section Header */}
         <div className="text-center mb-12 md:mb-16">
           <h2 className="text-3xl lg:text-5xl font-bold text-white mb-6">
-            <span className="bg-gradient-to-r from-blue-400 via-cyan-400 to-sky-400 bg-clip-text text-transparent cosmic-glow font-orbitron">
+            <span className="bg-gradient-to-r from-blue-400 via-cyan-400 to-sky-400 bg-clip-text text-transparent text-glow font-orbitron">
               {t.projects.title}
             </span>
           </h2>
@@ -76,7 +76,7 @@ export function Projects() {
               {/* Project Card */}
               <div
                 ref={(el) => { cardsRef.current[index] = el }}
-                className="bg-slate-800/50 rounded-3xl p-6 md:p-8 border border-slate-700/50 hover:border-indigo-400/30 transition-transform duration-200 ease-out shadow-2xl hover:shadow-indigo-500/20 cosmic-glow"
+                className="bg-slate-800/50 rounded-3xl p-6 md:p-8 border border-slate-700/50 hover:border-indigo-400/30 transition-transform duration-200 ease-out shadow-2xl hover:shadow-indigo-500/20 text-glow"
                 style={{ transformStyle: 'preserve-3d' }}
               >
                 {/* Project Image */}
@@ -175,7 +175,7 @@ export function Projects() {
 
                 {/* View Project Button */}
                 <div className="mt-6 pt-6 border-t border-slate-700/50">
-                  <button className="w-full px-6 py-3 bg-gradient-to-r from-blue-500 to-cyan-600 text-white font-semibold rounded-xl hover:from-blue-600 hover:to-cyan-700 transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-blue-500/25 flex items-center justify-center cosmic-glow">
+                  <button className="w-full px-6 py-3 bg-gradient-to-r from-blue-500 to-cyan-600 text-white font-semibold rounded-xl hover:from-blue-600 hover:to-cyan-700 transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-blue-500/25 flex items-center justify-center text-glow">
                     {t.projects.viewProject}
                     <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />

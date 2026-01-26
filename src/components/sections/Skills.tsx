@@ -2,46 +2,20 @@
 
 import { useLanguage } from "@/context/LanguageContext";
 
-const skillCategories = {
-  "Backend": [
-    "Node.js (Express)",
-    "PHP (Laravel)",
-    "PHP (CodeIgniter)"
-  ],
-  "Frontend": [
-    "Vue.js (Nuxt.js)",
-    "React (Next.js)",
-    "JavaScript (ES6+)",
-    "HTML5",
-    "CSS3",
-    "Bootstrap"
-  ],
-  "Database": [
-    "MySQL",
-    "Microsoft SQL Server"
-  ],
-  "Specialization": [
-    "Performance Optimization",
-    "WebP, Lazy Loading, Infinite Scroll",
-    "API Design",
-    "Clean Code Architecture"
-  ],
-  "Tools": [
-    "Git",
-    "Postman",
-    "Sourcetree"
-  ]
-};
-
 export function Skills() {
   const { t } = useLanguage();
+
+  // Get categories and lists from translation
+  const categories = t.skills.categories;
+  const skillLists = t.skills.lists;
+
   return (
-    <section id="skills" className="py-20 md:py-24 cosmic-section">
+    <section id="skills" className="py-20 md:py-24 standard-section">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
-        {/* Cosmic Section Header */}
+        {/* Section Header */}
         <div className="text-center mb-12 md:mb-16">
           <h2 className="text-3xl lg:text-5xl font-bold text-white mb-6">
-            <span className="bg-gradient-to-r from-blue-400 via-cyan-400 to-sky-400 bg-clip-text text-transparent cosmic-glow font-orbitron">
+            <span className="bg-gradient-to-r from-blue-400 via-cyan-400 to-sky-400 bg-clip-text text-transparent text-glow font-orbitron">
               {t.skills.title}
             </span>
           </h2>
@@ -52,36 +26,34 @@ export function Skills() {
         </div>
 
         {/* Skills Grid */}
-        <div className="grid md:grid-cols-2 gap-8">
-          {Object.entries(skillCategories).map(([category, skills]) => (
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+          {Object.entries(skillLists).map(([key, skills]) => (
             <div
-              key={category}
+              key={key}
               className="group"
             >
-              <div className="bg-slate-800/50 rounded-3xl p-6 md:p-8 border border-slate-700/50 hover:border-indigo-400/30 transition-all duration-500 hover:scale-[1.02] hover:shadow-2xl hover:shadow-indigo-500/10 cosmic-glow">
+              <div className="h-full bg-slate-800/50 rounded-3xl p-6 md:p-8 border border-slate-700/50 hover:border-indigo-400/30 transition-all duration-500 hover:scale-[1.02] hover:shadow-2xl hover:shadow-indigo-500/10 text-glow">
                 {/* Category Header */}
                 <div className="flex items-center mb-6">
                   <div className="w-10 h-10 md:w-12 md:h-12 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-2xl flex items-center justify-center mr-4">
                     <span className="text-white font-bold text-base md:text-lg">
-                      {category.charAt(0)}
+                      {key.charAt(0).toUpperCase()}
                     </span>
                   </div>
-                  <h3 className="text-xl md:text-2xl font-bold text-white group-hover:text-indigo-300 transition-colors duration-300 font-orbitron">
-                    {/* Map category key to translated category name */}
-                    {t.skills.categories[category.toLowerCase() as keyof typeof t.skills.categories] || category}
+                  <h3 className="text-lg md:text-xl font-bold text-white group-hover:text-indigo-300 transition-colors duration-300 font-orbitron">
+                    {categories[key as keyof typeof categories]}
                   </h3>
                 </div>
                 {/* Skills Tags */}
-                <div className="grid grid-cols-2 gap-2 md:gap-3">
+                <div className="flex flex-wrap gap-2 md:gap-3">
                   {skills.map((skill) => (
                     <div
                       key={skill}
-                      className="group flex items-center justify-center px-3 py-2.5 md:px-4 md:py-3 bg-slate-700/50 hover:bg-slate-600/50 border border-slate-600/50 hover:border-indigo-400/30 rounded-xl transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-indigo-500/10 cursor-default"
+                      className="group flex items-center px-3 py-1.5 md:px-4 md:py-2 bg-slate-700/50 hover:bg-slate-600/50 border border-slate-600/50 hover:border-indigo-400/30 rounded-xl transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-indigo-500/10 cursor-default"
                     >
-                      <span className="text-gray-300 group-hover:text-indigo-300 font-medium text-[11px] md:text-sm transition-colors duration-300 text-center">
+                      <span className="text-gray-300 group-hover:text-indigo-300 font-medium text-[11px] md:text-sm transition-colors duration-300">
                         {skill}
                       </span>
-                      <div className="ml-2 w-2 h-2 bg-indigo-400 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                     </div>
                   ))}
                 </div>
@@ -90,7 +62,6 @@ export function Skills() {
           ))}
         </div>
       </div>
-
     </section>
   );
 }

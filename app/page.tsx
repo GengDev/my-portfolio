@@ -14,6 +14,7 @@ import { Experience } from "@/components/sections/Experience";
 import { Education } from "@/components/sections/Education";
 import { Skills } from "@/components/sections/Skills";
 import { Projects } from "@/components/sections/Projects";
+import { WorkExperienceHighlights } from "@/components/sections/WorkExperienceHighlights";
 import { Contact } from "@/components/sections/Contact";
 
 // ============================================================================
@@ -58,6 +59,9 @@ export default function Home() {
         </div>
         <div className="section-fade-in">
           <Experience />
+        </div>
+        <div className="section-fade-in">
+          <WorkExperienceHighlights />
         </div>
         <div className="section-fade-in">
           <Education />

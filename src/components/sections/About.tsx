@@ -7,13 +7,13 @@ export function About() {
   const { t } = useLanguage();
 
   return (
-    <section id="about" className="py-20 md:py-24 cosmic-section relative overflow-hidden">
+    <section id="about" className="py-20 md:py-24 standard-section relative overflow-hidden">
 
       <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
-        {/* Cosmic Section Header */}
+        {/* Section Header */}
         <div className="text-center mb-12 md:mb-16">
           <h2 className="text-3xl lg:text-4xl font-bold text-white mb-6">
-            <span className="bg-gradient-to-r from-blue-400 via-cyan-400 to-sky-400 bg-clip-text text-transparent cosmic-glow font-orbitron">
+            <span className="bg-gradient-to-r from-blue-400 via-cyan-400 to-sky-400 bg-clip-text text-transparent text-glow font-orbitron">
               {t.about.title}
             </span>
           </h2>
@@ -39,7 +39,7 @@ export function About() {
               </div>
             </div>
 
-            {/* Cosmic Profile Picture */}
+            {/* Profile Picture */}
             <div className="flex justify-center mb-8">
               <div className="relative group">
                 {/* Background decorative elements */}
@@ -59,7 +59,7 @@ export function About() {
 
                 {/* Online status indicator */}
                 <div className="absolute -bottom-2 -right-2 w-8 h-8 bg-slate-900 rounded-full border-2 border-slate-800 flex items-center justify-center shadow-lg">
-                  <div className="w-3 h-3 bg-indigo-400 rounded-full cosmic-glow shadow-indigo-400/50"></div>
+                  <div className="w-3 h-3 bg-indigo-400 rounded-full text-glow shadow-indigo-400/50"></div>
                 </div>
 
                 {/* Decorative rings */}
@@ -72,7 +72,7 @@ export function About() {
               </div>
             </div>
 
-            {/* Cosmic Personal Details */}
+            {/* Personal Details */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6">
               <div className="bg-slate-800/50 rounded-xl p-4 border border-slate-700/50 hover:border-indigo-400/30 transition-all duration-300">
                 <div className="text-indigo-400 text-xs md:text-sm font-medium mb-1">{t.about.location}</div>
@@ -98,7 +98,7 @@ export function About() {
             <div>
               <h3 className="text-xl md:text-2xl font-bold text-white mb-6 font-orbitron">{t.about.whatIDo}</h3>
 
-              {/* Cosmic Skills Grid */}
+              {/* Skills Grid */}
               <div className="grid grid-cols-1 gap-4">
                 {t.about.services.map((service, index) => (
                   <div key={index} className="bg-slate-800/50 rounded-xl p-5 md:p-6 border border-slate-700/50 hover:border-indigo-400/30 transition-colors duration-300 hover:scale-[1.02]">
@@ -130,6 +130,18 @@ export function About() {
                     </div>
                   </div>
                 ))}
+              </div>
+              {/* Working Style & Strengths */}
+              <div>
+                <h3 className="text-xl md:text-2xl font-bold text-white mb-6 font-orbitron">{t.work.strengths.title}</h3>
+                <div className="space-y-3">
+                  {t.work.strengths.items.map((strength, index) => (
+                    <div key={index} className="flex items-center gap-3 p-3 bg-slate-800/30 rounded-xl border border-slate-700/50 hover:border-emerald-400/30 transition-all duration-300">
+                      <div className="w-2 h-2 bg-emerald-400 rounded-full"></div>
+                      <span className="text-gray-300 text-sm md:text-base group-hover:text-white transition-colors">{strength}</span>
+                    </div>
+                  ))}
+                </div>
               </div>
             </div>
           </div>

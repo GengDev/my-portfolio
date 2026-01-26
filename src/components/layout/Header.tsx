@@ -19,13 +19,13 @@ export function Header() {
 
   return (
     <header className="fixed top-0 w-full bg-black/30 backdrop-blur-3xl border-b border-blue-500/20 z-50 shadow-2xl shadow-blue-500/30">
-      {/* Animated cosmic border */}
+      {/* Animated header border */}
       <div className="absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-blue-500 via-cyan-400 to-transparent animate-pulse"></div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center py-6">
           <div className="flex items-center">
-            {/* Cosmic Logo */}
+            {/* Portfolio Logo */}
             <Link href="/" className="relative group">
               <div className="absolute -inset-2 bg-gradient-to-r from-blue-500 via-cyan-500 to-sky-500 rounded-lg opacity-0 group-hover:opacity-20 transition-opacity duration-500 blur-xl"></div>
               <span className="relative text-3xl font-black bg-gradient-to-r from-blue-400 via-cyan-400 to-slate-300 bg-clip-text text-transparent group-hover:from-blue-300 group-hover:via-cyan-300 group-hover:to-slate-200 transition-all duration-500 drop-shadow-lg">
@@ -66,7 +66,7 @@ export function Header() {
             </div>
           </div>
 
-          {/* Cosmic Mobile menu button */}
+          {/* Mobile menu button */}
           <button
             className="md:hidden relative p-3 text-white/80 hover:text-white transition-all duration-500 rounded-xl hover:bg-white/5 hover:scale-110 group"
             onClick={() => setIsMenuOpen(!isMenuOpen)}

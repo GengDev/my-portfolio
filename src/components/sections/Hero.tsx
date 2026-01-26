@@ -23,8 +23,8 @@ export function Hero() {
   }, [fullText]);
 
   return (
-    <section className="min-h-screen cosmic-section">
-      {/* Cosmic Background Pattern - kept minimal for hero */}
+    <section className="min-h-screen standard-section">
+      {/* Background Pattern - kept minimal for hero */}
       <div className="absolute inset-0 opacity-[0.03]">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_1px_1px,rgba(99,102,241,0.6)_1px,transparent_0)] bg-[size:40px_40px]"></div>
       </div>
@@ -33,17 +33,17 @@ export function Hero() {
         <div className="grid lg:grid-cols-2 gap-16 items-center min-h-screen pt-32 pb-20 lg:py-20">
           {/* Left Content */}
           <div className="space-y-8 slide-in-left">
-            {/* Epic Cosmic Status Badge */}
+            {/* Status Badge */}
             <div className="relative group mt-8 lg:mt-0">
               <div className="absolute -inset-1 bg-gradient-to-r from-blue-500 via-cyan-500 to-sky-500 rounded-full opacity-0 group-hover:opacity-20 transition-opacity duration-500 blur-lg animate-pulse"></div>
-              <div className="relative inline-flex items-center px-6 py-3 bg-black/50 backdrop-blur-xl border border-indigo-400/30 rounded-full text-sm text-indigo-300 font-semibold cosmic-glow shadow-lg shadow-indigo-500/20">
+              <div className="relative inline-flex items-center px-6 py-3 bg-black/50 backdrop-blur-xl border border-indigo-400/30 rounded-full text-sm text-indigo-300 font-semibold text-glow shadow-lg shadow-indigo-500/20">
                 <div className="w-3 h-3 bg-gradient-to-r from-indigo-400 to-cyan-400 rounded-full mr-3 animate-pulse shadow-lg shadow-indigo-400/50"></div>
                 🚀 {t.hero.badge}
                 <div className="absolute -top-1 -right-1 w-2 h-2 bg-cyan-400 rounded-full animate-ping"></div>
               </div>
             </div>
 
-            {/* Epic Cosmic Main Heading */}
+            {/* Main Heading */}
             <div className="space-y-6">
               <div className="relative">
                 {/* Background glow effect */}
@@ -81,7 +81,7 @@ export function Hero() {
               {t.hero.description}
             </p>
 
-            {/* Epic Cosmic Action Buttons */}
+            {/* Action Buttons */}
             <div className="flex flex-col sm:flex-row gap-6 pt-8">
               <a
                 href="#summary"
@@ -125,7 +125,7 @@ export function Hero() {
               </a>
             </div>
 
-            {/* Epic Cosmic Social Links */}
+            {/* Social Links */}
             <div className="flex items-center gap-8 pt-10">
               <span className="text-indigo-300 text-sm font-medium tracking-wider">{t.common.connect}</span>
               <div className="flex gap-6">

@@ -615,13 +615,13 @@ body {
   }
 }
 
-/* Epic True Space section background - for individual sections */
-.cosmic-section {
+/* Standard section background - for individual sections */
+.standard-section {
   position: relative;
   background: #000000;
 }
 
-.cosmic-section::before {
+.standard-section::before {
   content: '';
   position: absolute;
   top: 0;
@@ -645,7 +645,7 @@ body {
   pointer-events: none;
 }
 
-.cosmic-section::after {
+.standard-section::after {
   content: '';
   position: absolute;
   top: 0;
@@ -785,8 +785,8 @@ body {
   animation-delay: 8s;
 }
 
-/* Cosmic glow pulse for elements */
-.cosmic-glow {
+/* Text glow pulse for elements */
+.text-glow {
   animation: cosmicPulse 3s ease-in-out infinite;
 }
 

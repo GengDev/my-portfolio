@@ -6,7 +6,7 @@ export const THEME = {
     primary: '#2563eb', // Electric Blue
     secondary: '#06b6d4', // Electric Cyan
     accent: '#3b82f6', // Royal Blue
-    cosmic: '#0ea5e9', // Sky Blue
+    skyBlue: '#0ea5e9', // Sky Blue
     star: '#60a5fa', // Light Blue Star
     background: {
       primary: '#0f172a', // Very Dark Navy

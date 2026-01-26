@@ -9,23 +9,27 @@ export const en = {
         greeting: "Hi, I'm",
         name: "Watchara",
         role: "Full-Stack Software Engineer",
-        description: "Building scalable web applications and high-traffic E-commerce platforms with modern technologies",
+        description: "Building scalable web applications and business management systems with modern technologies",
         buttonPrimary: "Learn More",
         buttonSecondary: "Contact Me",
-        badge: "Exploring the Digital Cosmos",
+        badge: "Dedicated to Digital Excellence",
         status: "System Online"
     },
     summary: {
         title: "Professional Summary",
-        p1: "Mid-level Full-Stack Software Engineer with expertise in building scalable web applications and high-traffic E-commerce platforms. Proficient in Node.js, PHP, and Vue.js with a strong focus on system performance optimization and user experience.",
-        p2: "Experienced in modernizing legacy systems and translating complex business requirements into robust production-ready solutions. Skilled in developing complex sales and marketing engines, admin dashboards, and automated reporting systems.",
-        p3: "Passionate about performance optimization through techniques like Image Optimization, Lazy Loading, and Infinite Scrolling. Committed to delivering high-quality, maintainable code that drives business value."
+        points: [
+            "Full-Stack Software Engineer",
+            "Experienced in developing Web Applications for both frontend and backend.",
+            "Expert in JavaScript ecosystem (Vue.js, Nuxt, Next.js) and Node.js / PHP (Laravel).",
+            "Capable of system design from Database, API, Authentication, to UI/UX and Deployment.",
+            "Experienced with production-grade systems and high-traffic data environments."
+        ]
     },
     about: {
         title: "About Me",
-        subtitle: "Exploring the digital cosmos, one line of code at a time",
+        subtitle: "Innovating through code, one line at a time",
         whoIAm: "Who I Am",
-        p1: "I'm a dedicated full-stack developer with over 5 years of experience building scalable web applications and high-traffic e-commerce platforms. My journey in software development has been driven by a passion for solving complex problems and creating solutions that make a real impact.",
+        p1: "I'm a dedicated full-stack developer with over 2.5 years of experience building web applications and management systems that solve business problems. My journey in software development has been driven by a passion for solving complex challenges and creating practical solutions.",
         p2: "When I'm not coding, you'll find me exploring new technologies, contributing to open-source projects, or sharing knowledge with the developer community. I believe in continuous learning and staying updated with the latest industry trends.",
         location: "Location",
         locationValue: "Bangkok, Thailand",
@@ -34,7 +38,7 @@ export const en = {
         education: "Education",
         educationValue: "Computer Science",
         interests: "Interests",
-        interestsValue: "Tech & Cosmos",
+        interestsValue: "Tech & Software Development",
         whatIDo: "What I Do",
         services: [
             {
@@ -53,7 +57,7 @@ export const en = {
     },
     experience: {
         title: "Professional Experience",
-        subtitle: "Navigating the digital cosmos through innovative solutions and exceptional results",
+        subtitle: "Delivering efficient solutions and exceptional results",
         items: [
             {
                 title: "Software Engineer",
@@ -115,13 +119,92 @@ export const en = {
     },
     skills: {
         title: "Technical Skills",
-        subtitle: "Mastering the cosmic toolkit to build stellar digital solutions",
+        subtitle: "Mastering modern toolkit to build high-quality digital solutions",
         categories: {
-            backend: "Backend",
-            frontend: "Frontend",
-            database: "Database",
-            specialization: "Specialization",
-            tools: "Tools"
+            frontend: "Frontend Development",
+            backend: "Backend Development",
+            database: "Database & ORM",
+            system: "System & Integration",
+            devops: "DevOps & Deployment"
+        },
+        lists: {
+            frontend: [
+                "Vue.js (Vue 2 / Vue 3, Composition API)",
+                "Nuxt.js (Nuxt 3 – Fullstack)",
+                "Next.js (App Router, TypeScript)",
+                "UI Frameworks: Vuetify, Material UI, Bootstrap, Tailwind CSS",
+                "Responsive Design (Desktop / Mobile)",
+                "Component-based Architecture",
+                "State Management (Pinia, Redux, Local State)",
+                "Dynamic UI (Table, Modal, Swiper.js)"
+            ],
+            backend: [
+                "Node.js (Express)",
+                "PHP (Laravel)",
+                "RESTful API Design",
+                "Authentication (JWT, Role & Permission)",
+                "File Upload (Multer, S3 Compatible)",
+                "API Performance & Optimization",
+                "Data Validation (Zod, Backend)"
+            ],
+            database: [
+                "MySQL",
+                "Prisma ORM",
+                "Knex.js",
+                "Database Design & Normalization",
+                "Migration & Schema Management"
+            ],
+            system: [
+                "LINE API (Notification, Chat, Automation)",
+                "External API Integration",
+                "Cron / Scheduled Tasks",
+                "Environment-based Configuration"
+            ],
+            devops: [
+                "Vercel Deployment",
+                "Build & Production Handling",
+                "Debug Production Errors",
+                "Git / GitHub Workflow"
+            ]
+        }
+    },
+    work: {
+        experience: {
+            title: "Project Experience",
+            subtitle: "What I've actually done",
+            items: [
+                "Fullstack Web Application Development (Frontend + Backend)",
+                "RESTful API & Business Logic Design (CRUD)",
+                "Authentication & Authorization (JWT, Role & Permission)",
+                "Data-Driven UI & Dashboard (Search/Filter Table, Charts)",
+                "Complex Form & Validation (Multi-section, Multi-file Upload)",
+                "Performance & Optimization (API Response Time, State Management)",
+                "UI/UX & Component Design (Reusable, Responsive, Animation)",
+                "Third-Party Integration (LINE API, S3, External API)"
+            ]
+        },
+        systems: {
+            title: "Example Systems Built",
+            items: [
+                "Advice E-Commerce & Promotion System (Nuxt.js / Node.js)",
+                "iStore Thailand Sales & Inventory System (Nuxt.js / Node.js)",
+                "Product / Stock Management System",
+                "Quotation & Order Management System",
+                "Gift Voucher & Promotion System",
+                "Dormitory / Booking Management via LINE",
+                "Bug Tracking Dashboard",
+                "Document Upload & Verification System"
+            ]
+        },
+        strengths: {
+            title: "Working Style & Strengths",
+            items: [
+                "System Thinking",
+                "Understanding of both Business and Technical Requirements",
+                "Resolving Real-world Production Issues",
+                "Clean, maintainable code",
+                "Solo or Team collaboration"
+            ]
         }
     },
     projects: {
@@ -130,59 +213,59 @@ export const en = {
         viewProject: "Explore Project",
         items: [
             {
-                title: "E-Commerce & High-Traffic Platforms",
-                description: "Scalable e-commerce solutions serving nationwide users with enterprise-grade architecture.",
-                technologies: ["Node.js", "PHP", "Vue.js", "MySQL", "Performance Optimization"],
+                title: "Advice E-Commerce Platform",
+                description: "Participated in the development and maintenance of Advice's large-scale E-commerce system, supporting nationwide orders and promotions.",
+                technologies: ["Node.js", "Nuxt.js", "Vue.js", "MySQL", "Performance Optimization"],
                 githubUrl: "#",
-                liveUrl: "#",
+                liveUrl: "https://www.advice.co.th/",
                 imageUrl: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&h=450&fit=crop&q=80",
                 highlights: [
-                    "Microservices architecture handling 10M+ monthly transactions",
-                    "99.9% uptime with auto-scaling and load balancing",
-                    "Modern UI/UX with progressive web app features",
-                    "Legacy system migration with zero downtime"
+                    "Developed complex Pre-order and Promotion systems",
+                    "Large-scale Lucky Draw systems and marketing campaigns",
+                    "Managed real-time stock integration during peak traffic",
+                    "Enhanced frontend performance using Lazy Loading and Image Optimization"
                 ]
             },
             {
-                title: "Integrated Sales Engines",
-                description: "Advanced Pre-order and Marketing Campaign systems with real-time inventory management.",
-                technologies: ["Node.js", "Vue.js", "Real-time Systems", "Inventory Management"],
+                title: "iStore Thailand Platform",
+                description: "Developed web applications for iStore, the official Apple product retailer platform.",
+                technologies: ["Node.js", "Nuxt.js", "Vue.js", "MySQL", "System Integration"],
                 githubUrl: "#",
-                liveUrl: "#",
+                liveUrl: "https://www.istore.co.th/",
                 imageUrl: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=450&fit=crop&q=80",
                 highlights: [
-                    "Real-time stock synchronization across multiple warehouses",
-                    "Advanced analytics dashboard for campaign performance",
-                    "High-throughput transaction processing (1000+ TPS)",
-                    "Automated promotional rules engine with A/B testing"
+                    "Designed and developed full-stack web applications",
+                    "Sales and booking systems for new product launches",
+                    "End-to-end integration with backend and warehouse systems",
+                    "Executive dashboards for sales and stock summaries"
                 ]
             },
             {
-                title: "BI & Operations Dashboards",
-                description: "Intelligent reporting platforms with real-time analytics and operational insights.",
-                technologies: ["Vue.js", "Data Analytics", "Reporting Systems", "Business Intelligence"],
+                title: "Gift Voucher & Promotion System",
+                description: "A robust system for managing vouchers and promotional campaigns with complex rules and verification.",
+                technologies: ["Next.js", "Nuxt.js", "Node.js", "Redis"],
                 githubUrl: "#",
                 liveUrl: "#",
                 imageUrl: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=450&fit=crop&q=80",
                 highlights: [
-                    "Real-time KPI dashboards with predictive analytics",
-                    "Advanced filtering and drill-down capabilities",
-                    "Automated report generation and email scheduling",
-                    "Custom metrics tracking with alert notifications"
+                    "Dynamic promotion rule configuration",
+                    "Secure voucher verification and redemption system",
+                    "Optimized for high traffic during campaign periods",
+                    "Detailed promotion performance reporting"
                 ]
             },
             {
-                title: "Internal Process Digitalization",
-                description: "Comprehensive workflow automation and data management systems for academic institutions.",
-                technologies: ["Full-Stack Development", "API Integration", "Data Management", "Workflow Automation"],
+                title: "Bug Tracking System",
+                description: "An internal tool for tracking issues and bug fix statuses within development teams to improve efficiency.",
+                technologies: ["Vue.js", "Node.js", "MySQL", "Authentication"],
                 githubUrl: "#",
                 liveUrl: "#",
                 imageUrl: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&h=450&fit=crop&q=80",
                 highlights: [
-                    "AI-powered document processing and verification",
-                    "Automated approval workflows reducing processing time by 80%",
-                    "End-to-end encryption with role-based access control",
-                    "Mobile-responsive interface for remote access"
+                    "LINE API integration for bug status notifications",
+                    "Role-based access control (Admin/Developer)",
+                    "S3 compatible storage for issue documentation",
+                    "Advanced filtering and issue search capabilities"
                 ]
             },
             {
@@ -216,7 +299,7 @@ export const en = {
         ]
     },
     contact: {
-        title: "Contact the Cosmos",
+        title: "Contact Me",
         subtitle: "Ready to launch your next digital adventure",
         navigate: "Navigate to Me",
         emailLabel: "Email",
@@ -240,10 +323,10 @@ export const en = {
         }
     },
     footer: {
-        title: "Let's Connect in the Cyberpunk Network",
-        subtitle: "Ready to launch your next digital project?",
+        title: "Let's Connect",
+        subtitle: "",
         copyright: "Watchara Sritonwong",
-        builtWith: "Built with Next.js, TypeScript & Tailwind CSS in the cosmos"
+        builtWith: "Built with Next.js, TypeScript & Tailwind CSS"
     },
     common: {
         connect: "Connect With Me"

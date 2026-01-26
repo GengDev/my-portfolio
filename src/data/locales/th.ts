@@ -9,23 +9,27 @@ export const th = {
         greeting: "สวัสดี ผมชื่อ",
         name: "วัชระ",
         role: "Full-Stack Software Engineer",
-        description: "สร้างเว็บแอปพลิเคชันที่รองรับการขยายตัวและแพลตฟอร์ม E-commerce ที่มีการใช้งานสูงด้วยเทคโนโลยีที่ทันสมัย",
+        description: "สร้างเว็บแอปพลิเคชันและระบบบริหารจัดการธุรกิจด้วยเทคโนโลยีที่ทันสมัย",
         buttonPrimary: "เรียนรู้เพิ่มเติม",
         buttonSecondary: "ติดต่อผม",
-        badge: "ท่องไปในจักรวาลดิจิทัล",
+        badge: "มุ่งมั่นพัฒนาโซลูชันดิจิทัล",
         status: "ระบบพร้อมทำงาน"
     },
     summary: {
         title: "สรุปข้อมูลการทำงาน",
-        p1: "Full-Stack Software Engineer ระดับกลางที่มีความเชี่ยวชาญในการสร้างเว็บแอปพลิเคชันที่รองรับการขยายตัวและแพลตฟอร์ม E-commerce ที่มีการใช้งานสูง เชี่ยวชาญใน Node.js, PHP และ Vue.js โดยเน้นที่การเพิ่มประสิทธิภาพของระบบและประสบการณ์ของผู้ใช้",
-        p2: "มีประสบการณ์ในการปรับปรุงระบบเก่า (Legacy Systems) และแปลงความต้องการทางธุรกิจที่ซับซ้อนให้เป็นโซลูชันที่พร้อมใช้งานจริง มีทักษะในการพัฒนาระบบการขายและการตลาดที่ซับซ้อน แดชบอร์ดผู้ดูแลระบบ และระบบรายงานอัตโนมัติ",
-        p3: "หลงใหลในการเพิ่มประสิทธิภาพการทำงานผ่านเทคนิคต่าง ๆ เช่น Image Optimization, Lazy Loading และ Infinite Scrolling มุ่งมั่นที่จะส่งมอบโค้ดที่มีคุณภาพสูงและดูแลรักษาง่ายเพื่อสร้างมูลค่าให้กับธุรกิจ"
+        points: [
+            "Full-Stack Software Engineer",
+            "มีประสบการณ์พัฒนา Web Application ทั้งฝั่ง Frontend และ Backend",
+            "เชี่ยวชาญ JavaScript ecosystem (Vue.js, Nuxt, Next.js) และ Node.js / PHP (Laravel)",
+            "สามารถออกแบบระบบ ตั้งแต่ Database, API, Authentication, ไปจนถึง UI/UX และ Deployment",
+            "มีประสบการณ์ทำงานกับระบบจริงระดับ Production และระบบที่ต้องรองรับข้อมูลจำนวนมาก"
+        ]
     },
     about: {
         title: "เกี่ยวกับผม",
-        subtitle: "สำรวจจักรวาลดิจิทัล ทีละบรรทัดของโค้ด",
+        subtitle: "สร้างสรรค์นวัตกรรมผ่านการพัฒนาซอฟต์แวร์",
         whoIAm: "ตัวตนของผม",
-        p1: "ผมเป็นนักพัฒนา Full-Stack ที่ทุ่มเทพร้อมประสบการณ์กว่า 5 ปีในการสร้างเว็บแอปพลิเคชันที่รองรับการขยายตัวและแพลตฟอร์ม E-commerce ที่มีการใช้งานสูง การเดินทางในสายงานพัฒนาซอฟต์แวร์ฟของผมขับเคลื่อนด้วยความหลงใหลในการแก้ปัญหาที่ซับซ้อนและสร้างโซลูชันที่สร้างผลกระทบจริง",
+        p1: "ผมเป็นนักพัฒนา Full-Stack ที่ทุ่มเทพร้อมประสบการณ์กว่า 2.5 ปีในการสร้างเว็บแอปพลิเคชันและระบบบริหารจัดการที่ช่วยแก้ปัญหาธุรกิจ การเดินทางในสายงานพัฒนาซอฟต์แวร์ของผมขับเคลื่อนด้วยความหลงใหลในการแก้ปัญหาที่ซับซ้อนและสร้างโซลูชันที่ใช้งานได้จริง",
         p2: "เมื่อไม่ได้เขียนโค้ด คุณจะพบผมกำลังสำรวจเทคโนโลยีใหม่ ๆ สนับสนุนโปรเจกต์ Open-source หรือแบ่งปันความรู้กับชุมชนนักพัฒนา ผมเชื่อในการเรียนรู้อย่างต่อเนื่องและการก้าวทันเทรนด์ล่าสุดของอุตสาหกรรม",
         location: "ที่อยู่",
         locationValue: "กรุงเทพฯ, ไทย",
@@ -34,7 +38,7 @@ export const th = {
         education: "การศึกษา",
         educationValue: "วิทยาการคอมพิวเตอร์",
         interests: "ความสนใจ",
-        interestsValue: "เทคโนโลยี & จักรวาล",
+        interestsValue: "เทคโนโลยี & การพัฒนาซอฟต์แวร์",
         whatIDo: "สิ่งที่ผมทำ",
         services: [
             {
@@ -53,7 +57,7 @@ export const th = {
     },
     experience: {
         title: "ประสบการณ์การทำงาน",
-        subtitle: "นำทางสู่จักรวาลดิจิทัลด้วยโซลูชันที่เป็นนวัตกรรมและผลลัพธ์ที่ยอดเยี่ยม",
+        subtitle: "ส่งมอบโซลูชันที่มีประสิทธิภาพและผลลัพธ์ที่ยอดเยี่ยม",
         items: [
             {
                 title: "Software Engineer",
@@ -115,13 +119,92 @@ export const th = {
     },
     skills: {
         title: "ทักษะทางเทคนิค",
-        subtitle: "เชี่ยวชาญเครื่องมือแห่งจักรวาลเพื่อสร้างโซลูชันดิจิทัลที่ยอดเยี่ยม",
+        subtitle: "เชี่ยวชาญเครื่องมือที่ทันสมัยเพื่อสร้างโซลูชันดิจิทัลที่ยอดเยี่ยม",
         categories: {
-            backend: "Backend",
-            frontend: "Frontend",
-            database: "Database",
-            specialization: "Specialization",
-            tools: "Tools"
+            frontend: "Frontend Development",
+            backend: "Backend Development",
+            database: "Database & ORM",
+            system: "System & Integration",
+            devops: "DevOps & Deployment"
+        },
+        lists: {
+            frontend: [
+                "Vue.js (Vue 2 / Vue 3, Composition API)",
+                "Nuxt.js (Nuxt 3 – Fullstack)",
+                "Next.js (App Router, TypeScript)",
+                "UI Frameworks: Vuetify, Material UI, Bootstrap, Tailwind CSS",
+                "Responsive Design (Desktop / Mobile)",
+                "Component-based Architecture",
+                "State Management (Pinia, Redux, Local State)",
+                "Dynamic UI (Table, Modal, Swiper.js)"
+            ],
+            backend: [
+                "Node.js (Express)",
+                "PHP (Laravel)",
+                "RESTful API Design",
+                "Authentication (JWT, Role & Permission)",
+                "File Upload (Multer, S3 Compatible)",
+                "API Performance & Optimization",
+                "Data Validation (Zod, Backend)"
+            ],
+            database: [
+                "MySQL",
+                "Prisma ORM",
+                "Knex.js",
+                "Database Design & Normalization",
+                "Migration & Schema Management"
+            ],
+            system: [
+                "LINE API (Notification, Chat, Automation)",
+                "External API Integration",
+                "Cron / Scheduled Tasks",
+                "Environment-based Configuration"
+            ],
+            devops: [
+                "Vercel Deployment",
+                "Build & Production Handling",
+                "Debug Production Errors",
+                "Git / GitHub Workflow"
+            ]
+        }
+    },
+    work: {
+        experience: {
+            title: "ประสบการณ์โปรเจกต์ (Project Experience)",
+            subtitle: "สรุปสิ่งที่ทำจริง",
+            items: [
+                "พัฒนา Web Application แบบครบวงจร (Frontend + Backend)",
+                "สร้าง REST API สำหรับระบบจัดการข้อมูล (CRUD) และ Business Logic",
+                "พัฒนาระบบ Authentication & Authorization (JWT, Role & Permission)",
+                "Data-Driven UI & Dashboard (Search/Filter Table, Charts)",
+                "Complex Form & Validation (Multi-section, Multi-file Upload)",
+                "Performance & Optimization (API Response Time, State Management)",
+                "UI/UX & Component Design (Reusable, Responsive, Animation)",
+                "Third-Party Integration (LINE API, S3, External API)"
+            ]
+        },
+        systems: {
+            title: "ตัวอย่างระบบที่เคยพัฒนา",
+            items: [
+                "Advice E-Commerce & Promotion System (Nuxt.js / Node.js)",
+                "iStore Thailand Sales & Inventory System (Nuxt.js / Node.js)",
+                "Product / Stock Management System",
+                "Quotation & Order Management System",
+                "Gift Voucher & Promotion System",
+                "Dormitory / Booking Management via LINE",
+                "Bug Tracking Dashboard",
+                "Document Upload & Verification System"
+            ]
+        },
+        strengths: {
+            title: "สไตล์การทำงานและจุดแข็ง",
+            items: [
+                "คิดเชิงระบบ (System Thinking)",
+                "เข้าใจทั้ง Business และ Technical Requirement",
+                "แก้ปัญหา Production ได้จริง",
+                "เขียนโค้ดที่คนอื่นอ่านและต่อยอดได้ (Clean Code)",
+                "สามารถทำงานเดี่ยวหรือร่วมกับทีมได้ดี"
+            ]
         }
     },
     projects: {
@@ -130,59 +213,59 @@ export const th = {
         viewProject: "ดูรายละเอียดโปรเจกต์",
         items: [
             {
-                title: "แพลตฟอร์ม E-Commerce และระบบที่มีผู้ใช้งานสูง",
-                description: "โซลูชัน E-commerce ที่รองรับการขยายตัว ให้บริการผู้ใช้ทั่วประเทศด้วยสถาปัตยกรรมระดับองค์กร",
-                technologies: ["Node.js", "PHP", "Vue.js", "MySQL", "Performance Optimization"],
+                title: "Advice E-Commerce Platform",
+                description: "ร่วมพัฒนาและดูแลระบบ E-commerce ขนาดใหญ่ของ Advice รองรับการสั่งซื้อและโปรโมชั่นทั่วประเทศ",
+                technologies: ["Node.js", "Nuxt.js", "Vue.js", "MySQL", "Performance Optimization"],
                 githubUrl: "#",
-                liveUrl: "#",
+                liveUrl: "https://www.advice.co.th/",
                 imageUrl: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&h=450&fit=crop&q=80",
                 highlights: [
-                    "สถาปัตยกรรม Microservices รองรับธุรกรรมมากกว่า 10 ล้านรายการต่อเดือน",
-                    "Uptime 99.9% พร้อมระบบ Auto-scaling และ Load balancing",
-                    "UI/UX ทันสมัยพร้อมฟีเจอร์ Progressive Web App",
-                    "การย้ายระบบเก่า (Legacy migration) โดยไม่มี Downtime"
+                    "พัฒนาระบบ Pre-order และ Promotion ที่ซับซ้อน",
+                    "ระบบ Lucky Draw และแคมเปญการตลาดขนาดใหญ่",
+                    "จัดการการเชื่อมต่อสต็อกแบบเรียลไทม์ในช่วง Peak",
+                    "เพิ่มประสิทธิภาพ Frontend ด้วยเทคนิค Lazy Loading และ Image Optimization"
                 ]
             },
             {
-                title: "ระบบบริหารการขายครบวงจร",
-                description: "ระบบ Pre-order และแคมเปญการตลาดขั้นสูง พร้อมการจัดการสต็อกแบบเรียลไทม์",
-                technologies: ["Node.js", "Vue.js", "Real-time Systems", "Inventory Management"],
+                title: "iStore Thailand Platform",
+                description: "พัฒนาระบบเว็บแอปพลิเคชันสำหรับ iStore แพลตฟอร์มจำหน่ายสินค้า Apple อย่างเป็นทางการ",
+                technologies: ["Node.js", "Nuxt.js", "Vue.js", "MySQL", "System Integration"],
                 githubUrl: "#",
-                liveUrl: "#",
+                liveUrl: "https://www.istore.co.th/",
                 imageUrl: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=450&fit=crop&q=80",
                 highlights: [
-                    "ซิงค์สต็อกแบบเรียลไทม์ระหว่างคลังสินค้าหลายแห่ง",
-                    "แดชบอร์ดวิเคราะห์ประสิทธิภาพแคมเปญขั้นสูง",
-                    "รองรับการประมวลผลธุรกรรมปริมาณมาก (1000+ TPS)",
-                    "ระบบโปรโมชั่นอัตโนมัติพร้อม A/B Testing"
+                    "ออกแบบและพัฒนา Full-stack Web Application",
+                    "ระบบจัดการการขายและการจองสินค้าเครื่องใหม่",
+                    "เชื่อมต่อระบบหลังบ้านและคลังสินค้าแบบ End-to-end",
+                    "Dashboard สำหรับผู้บริหารเพื่อดูสรุปยอดและสต็อก"
                 ]
             },
             {
-                title: "แดชบอร์ด BI และการดำเนินงาน",
-                description: "แพลตฟอร์มรายงานอัจฉริยะพร้อมการวิเคราะห์แบบเรียลไทม์และข้อมูลเชิงลึกด้านการดำเนินงาน",
-                technologies: ["Vue.js", "Data Analytics", "Reporting Systems", "Business Intelligence"],
+                title: "ระบบจัดการบัตรกำนัล (Gift Voucher & Promotion)",
+                description: "ระบบจัดการบัตรกำนัลและโปรโมชั่นแคมเปญ รองรับเงื่อนไขที่ซับซ้อนและการตรวจสอบสิทธิ์",
+                technologies: ["Next.js", "Nuxt.js", "Node.js", "Redis"],
                 githubUrl: "#",
                 liveUrl: "#",
                 imageUrl: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=450&fit=crop&q=80",
                 highlights: [
-                    "แดชบอร์ด KPI แบบเรียลไทม์พร้อมการวิเคราะห์เชิงคาดการณ์",
-                    "ความสามารถในการกรองและเจาะลึกข้อมูลขั้นสูง",
-                    "สร้างรายงานอัตโนมัติและตั้งเวลาส่งอีเมล",
-                    "ติดตามตัวชี้วัดที่กำหนดเองพร้อมการแจ้งเตือน"
+                    "ตั้งค่าเงื่อนไขโปรโมชั่นแบบ Dynamic",
+                    "ระบบตรวจสอบและเปิดใช้งาน Voucher (Redemption)",
+                    "รองรับ Traffic จำนวนมากในช่วงแคมเปญ",
+                    "รายงานวิเคราะห์ประสิทธิภาพโปรโมชั่น"
                 ]
             },
             {
-                title: "ระบบ Digitalization ภายในองค์กร",
-                description: "ระบบจัดการข้อมูลและเวิร์กโฟลว์อัตโนมัติแบบครบวงจรสำหรับสถาบันการศึกษา",
-                technologies: ["Full-Stack Development", "API Integration", "Data Management", "Workflow Automation"],
+                title: "แดชบอร์ดติดตามบั๊ก (Bug Tracking System)",
+                description: "เครื่องมือติดตามปัญหาและสถานะการแก้ไขบั๊ก ภายในทีมพัฒนาเพื่อเพิ่มประสิทธิภาพการทำงาน",
+                technologies: ["Vue.js", "Node.js", "MySQL", "Authentication"],
                 githubUrl: "#",
                 liveUrl: "#",
                 imageUrl: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&h=450&fit=crop&q=80",
                 highlights: [
-                    "ประมวลผลและตรวจสอบเอกสารด้วย AI",
-                    "เวิร์กโฟลว์การอนุมัติอัตโนมัติ ลดเวลาดำเนินการได้ 80%",
-                    "การเข้ารหัสแบบ End-to-end พร้อมการควบคุมการเข้าถึงตามบทบาท",
-                    "รองรับการใช้งานผ่านมือถือสำหรับการเข้าถึงระยะไกล"
+                    "แจ้งเตือนสถานะ Bug ผ่าน LINE API",
+                    "จัดการสิทธิ์ผู้ใช้ (Role & Permission)",
+                    "แนบไฟล์และรูปภาพหลักฐานปัญหา (S3)",
+                    "ระบบกรองและค้นหาปัญหาขั้นสูง"
                 ]
             },
             {
@@ -240,10 +323,10 @@ export const th = {
         }
     },
     footer: {
-        title: "เชื่อมต่อกันในเครือข่ายไซเบอร์พังค์",
-        subtitle: "พร้อมเริ่มโปรเจกต์ดิจิทัลถัดไปของคุณหรือยัง?",
+        title: "ช่องทางการติดต่อ",
+        subtitle: "",
         copyright: "Watchara Sritonwong",
-        builtWith: "สร้างด้วย Next.js, TypeScript & Tailwind CSS ในห้วงอวกาศ"
+        builtWith: "สร้างด้วย Next.js, TypeScript & Tailwind CSS"
     },
     common: {
         connect: "ช่องทางการติดต่อ"
