@@ -82,10 +82,10 @@ export function Hero() {
             </p>
 
             {/* Action Buttons */}
-            <div className="flex flex-col sm:flex-row gap-6 pt-8">
+            <div className="flex flex-wrap gap-4 pt-8">
               <a
                 href="#summary"
-                className="group relative inline-flex items-center justify-center px-10 py-5 font-bold rounded-2xl transition-all duration-500 hover:scale-110 epic-entrance overflow-hidden"
+                className="group relative inline-flex items-center justify-center px-8 py-4 font-bold rounded-2xl transition-all duration-500 hover:scale-105 epic-entrance overflow-hidden"
                 style={{ animationDelay: '1.2s' }}
               >
                 {/* Multiple glow layers */}
@@ -94,12 +94,12 @@ export function Hero() {
                 <div className="absolute inset-0 bg-gradient-to-r from-blue-500 via-cyan-500 to-sky-500 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 animate-pulse"></div>
 
                 {/* Button content */}
-                <span className="relative z-10 text-white text-lg font-bold drop-shadow-lg">
+                <span className="relative z-10 text-white text-base font-bold drop-shadow-lg">
                   {t.hero.buttonPrimary}
                 </span>
 
                 {/* Animated arrow */}
-                <svg className="relative z-10 w-6 h-6 ml-3 transition-transform duration-300 group-hover:translate-x-2 group-hover:scale-110" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className="relative z-10 w-5 h-5 ml-2 transition-transform duration-300 group-hover:translate-x-2 group-hover:scale-110" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                 </svg>
 
@@ -109,14 +109,29 @@ export function Hero() {
               </a>
 
               <a
+                href="/watchara_sritonwong_resume.pdf"
+                download
+                className="group relative inline-flex items-center justify-center px-8 py-4 border-2 border-cyan-400/50 text-cyan-300 font-bold rounded-2xl transition-all duration-500 hover:scale-105 hover:bg-cyan-500/10 hover:border-cyan-300 epic-entrance"
+                style={{ animationDelay: '1.3s' }}
+              >
+                <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/0 to-blue-500/0 group-hover:from-cyan-500/20 group-hover:to-blue-500/20 rounded-2xl transition-all duration-500 blur-sm"></div>
+                <svg className="w-5 h-5 mr-2 text-cyan-300 animate-pulse" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+                </svg>
+                <span className="relative z-10 text-base drop-shadow-lg">
+                  {t.nav.downloadCv}
+                </span>
+              </a>
+
+              <a
                 href="#contact"
-                className="group relative inline-flex items-center justify-center px-10 py-5 border-2 border-indigo-400/50 text-indigo-300 font-bold rounded-2xl transition-all duration-500 hover:scale-110 hover:bg-indigo-500/10 hover:border-indigo-300 epic-entrance"
+                className="group relative inline-flex items-center justify-center px-8 py-4 border-2 border-indigo-400/50 text-indigo-300 font-bold rounded-2xl transition-all duration-500 hover:scale-105 hover:bg-indigo-500/10 hover:border-indigo-300 epic-entrance"
                 style={{ animationDelay: '1.4s' }}
               >
                 {/* Hover glow effect */}
                 <div className="absolute inset-0 bg-gradient-to-r from-blue-500/0 to-cyan-500/0 group-hover:from-blue-500/20 group-hover:to-cyan-500/20 rounded-2xl transition-all duration-500 blur-sm"></div>
 
-                <span className="relative z-10 text-lg drop-shadow-lg">
+                <span className="relative z-10 text-base drop-shadow-lg">
                   {t.hero.buttonSecondary}
                 </span>
 

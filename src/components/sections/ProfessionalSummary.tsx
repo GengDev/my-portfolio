@@ -98,10 +98,10 @@ export function ProfessionalSummary() {
         <div className="text-center mt-16">
           <p className="text-gray-400 mb-8">{t.footer.subtitle || "Ready to build something great together?"}</p>
           <a
-            href="#contact"
+            href="#projects"
             className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-blue-500 to-cyan-600 text-white font-semibold rounded-xl hover:from-blue-600 hover:to-cyan-700 transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-blue-500/25 text-glow"
           >
-            Launch Project
+            View My Work
             <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
             </svg>

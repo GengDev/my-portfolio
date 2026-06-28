@@ -3,7 +3,8 @@ export const en = {
         about: "About",
         experience: "Experience",
         projects: "Projects",
-        contact: "Contact"
+        contact: "Contact",
+        downloadCv: "Download CV"
     },
     hero: {
         greeting: "Hi, I'm",
@@ -18,23 +19,37 @@ export const en = {
     summary: {
         title: "Professional Summary",
         points: [
-            "Full-Stack Software Engineer",
-            "Experienced in developing Web Applications for both frontend and backend.",
-            "Expert in JavaScript ecosystem (Vue.js, Nuxt, Next.js) and Node.js / PHP (Laravel).",
-            "Capable of system design from Database, API, Authentication, to UI/UX and Deployment.",
-            "Experienced with production-grade systems and high-traffic data environments."
+            "Full-Stack Software Engineer with 3+ years of experience in backend development and enterprise application systems.",
+            "Specialized in enterprise systems including e-commerce platforms, document management, digital signatures, and e-Tax Invoice / e-Receipt (EVRT/EPP10) integrations.",
+            "Strong expertise in database design, query optimization, and transactional system development for high-concurrency environments.",
+            "Experienced with AWS cloud services (Lambda, S3, CloudWatch), Docker containerization, and CI/CD workflows using GitHub Actions and GitLab CI.",
+            "Proven track record of improving code quality and system reliability through unit testing, refactoring, and performance optimization."
+        ]
+    },
+    keyHighlights: {
+        title: "Key Highlights",
+        subtitle: "Core expertise that drives enterprise-grade solutions",
+        items: [
+            "Enterprise backend system development (e-commerce, workflow, document management systems)",
+            "e-Tax Invoice / e-Receipt (EVRT/EPP10) integration with Thailand Revenue Department systems",
+            "High-concurrency system design with transactional consistency and reliability",
+            "RESTful API architecture for enterprise system integration",
+            "Database performance optimization using query tuning and indexing strategies",
+            "AWS-based processing using Lambda, S3, and CloudWatch",
+            "CI/CD workflow execution using GitHub Actions and GitLab CI (build, deployment & monitoring)",
+            "Code quality improvement through unit testing, refactoring, and performance optimization"
         ]
     },
     about: {
         title: "About Me",
         subtitle: "Innovating through code, one line at a time",
         whoIAm: "Who I Am",
-        p1: "I'm a dedicated full-stack developer with over 2.5 years of experience building web applications and management systems that solve business problems. My journey in software development has been driven by a passion for solving complex challenges and creating practical solutions.",
+        p1: "I'm a dedicated Full-Stack Software Engineer with over 3 years of experience building scalable backend services, web applications, and enterprise management systems that solve complex business problems. My journey in software development has been driven by a passion for creating reliable, transaction-safe architectures and optimizing performance.",
         p2: "When I'm not coding, you'll find me exploring new technologies, contributing to open-source projects, or sharing knowledge with the developer community. I believe in continuous learning and staying updated with the latest industry trends.",
         location: "Location",
         locationValue: "Bangkok, Thailand",
         experience: "Experience",
-        experienceValue: "2.5+ Years",
+        experienceValue: "3+ Years",
         education: "Education",
         educationValue: "Computer Science",
         interests: "Interests",
@@ -60,38 +75,59 @@ export const en = {
         subtitle: "Delivering efficient solutions and exceptional results",
         items: [
             {
-                title: "Software Engineer",
-                company: "Advice IT Infinite",
-                period: "January 2025 – Present",
-                description: "Full-Stack Development: Engineered and maintained end-to-end web applications for Advice and iStore, ensuring high availability and scalability for nationwide users.",
+                title: "Full-Stack Software Engineer",
+                company: "Brainergy Co., Ltd.",
+                period: "Mar 2026 – Present",
+                description: "Developed backend services, document workflow engines, and secure e-Tax integrations for enterprise-grade digital signature and document management systems.",
                 achievements: [
-                    "Sales & Marketing Engines: Developed complex Pre-order, Promotion, and Lucky Draw systems, managing real-time stock integration and transaction logic during high-traffic product launches",
-                    "Performance Optimization: Improved frontend efficiency by implementing Image Optimization, Lazy Loading, and Infinite Scrolling, leading to faster page load times and enhanced user retention",
-                    "Business Solutions: Designed robust Admin Dashboards and automated reporting systems to provide data-driven insights for product and operations management",
-                    "System Modernization: Refactored and enhanced Legacy Systems (CodeIgniter), integrating modern features while improving overall stability and maintainability"
-                ]
+                    "Developed backend services for enterprise-grade document management and digital signature systems",
+                    "Developed e-Tax Invoice / e-Receipt (EVRT/EPP10) system integrated with Thailand Revenue Department via secure RESTful APIs",
+                    "Processed enterprise documents in PDF, XML, and JSON formats for business workflows",
+                    "Implemented AWS Lambda-based batch processing and S3-based storage architecture",
+                    "Supported CI/CD pipeline execution for build, deployment execution, and production monitoring",
+                    "Improved system reliability through unit testing, code refactoring, and performance optimization"
+                ],
+                technologies: ["Node.js", "Express", "AWS Lambda", "AWS S3", "GitLab CI", "RESTful API", "PDF/XML/JSON"]
             },
             {
-                title: "Mandatory Service",
-                company: "Military Service",
-                period: "November 2023 – November 2024",
+                title: "Full-Stack Software Developer",
+                company: "Advice IT Infinite Public Company Limited",
+                period: "Jan 2025 – Feb 2026",
+                description: "Engineered backend services for Advice and iStore platforms, optimizing transactional safety and database performance.",
+                achievements: [
+                    "Developed backend services for enterprise e-commerce platform supporting high concurrent traffic",
+                    "Built promotion and campaign management systems based on business requirements",
+                    "Designed RESTful APIs for product, order, and core business logic integration",
+                    "Implemented transaction-safe architecture for concurrent user operations",
+                    "Improved database performance through query optimization and indexing strategies",
+                    "Refactored legacy systems to improve maintainability and reduce technical debt"
+                ],
+                technologies: ["Node.js", "Nuxt.js", "Vue.js", "MySQL", "CodeIgniter", "RESTful API"]
+            },
+            {
+                title: "Web Developer",
+                company: "Sirindhorn International Institute of Technology (SIIT)",
+                period: "May 2022 – Oct 2023",
+                description: "Digitized organizational workflows by developing internal applications, and optimized database schemas.",
+                achievements: [
+                    "Developed internal systems to automate and digitize organizational workflows",
+                    "Designed normalized database schemas with data integrity and validation rules",
+                    "Integrated internal and external APIs across departments",
+                    "Improved reporting performance through query optimization and execution plan analysis"
+                ],
+                technologies: ["Full-Stack", "Database Design", "API Integration", "Query Optimization"]
+            },
+            {
+                title: "Military Service",
+                company: "Royal Thai Air Force",
+                period: "Nov 2023 – Nov 2024",
                 description: "Completed mandatory military service, demonstrating discipline and commitment to national duty.",
                 achievements: [
                     "Demonstrated discipline and commitment to national service",
                     "Developed leadership and teamwork skills",
                     "Maintained high standards of professionalism"
-                ]
-            },
-            {
-                title: "Software Developer",
-                company: "Sirindhorn International Institute of Technology (SIIT)",
-                period: "May 2022 – October 2023",
-                description: "Workflow Automation: Digitized organizational workflows by developing internal full-stack applications, significantly reducing manual data processing time.",
-                achievements: [
-                    "Data Management: Implemented secure backend logic and integrated diverse APIs to manage and verify institutional data efficiently",
-                    "Developed internal full-stack applications for workflow automation",
-                    "Significantly reduced manual data processing time"
-                ]
+                ],
+                technologies: []
             }
         ],
         keyAchievements: "Key Achievements"
@@ -123,48 +159,52 @@ export const en = {
         categories: {
             frontend: "Frontend Development",
             backend: "Backend Development",
-            database: "Database & ORM",
-            system: "System & Integration",
-            devops: "DevOps & Deployment"
+            apiAndSystem: "API & System Integration",
+            database: "Database",
+            devops: "Cloud & CI/CD",
+            qualityTools: "Quality & Testing Tools"
         },
         lists: {
             frontend: [
-                "Vue.js (Vue 2 / Vue 3, Composition API)",
-                "Nuxt.js (Nuxt 3 – Fullstack)",
-                "Next.js (App Router, TypeScript)",
-                "UI Frameworks: Vuetify, Material UI, Bootstrap, Tailwind CSS",
-                "Responsive Design (Desktop / Mobile)",
-                "Component-based Architecture",
-                "State Management (Pinia, Redux, Local State)",
-                "Dynamic UI (Table, Modal, Swiper.js)"
+                "React",
+                "Next.js",
+                "Vue.js (2 & 3)",
+                "Nuxt.js",
+                "Angular",
+                "TypeScript",
+                "Tailwind CSS",
+                "Bootstrap"
             ],
             backend: [
                 "Node.js (Express)",
                 "PHP (Laravel)",
-                "RESTful API Design",
-                "Authentication (JWT, Role & Permission)",
-                "File Upload (Multer, S3 Compatible)",
-                "API Performance & Optimization",
-                "Data Validation (Zod, Backend)"
+                "Python (Django)",
+                "C# (.NET)"
+            ],
+            apiAndSystem: [
+                "RESTful API",
+                "System Integration",
+                "JWT",
+                "Role-Based Access Control (RBAC)",
+                "Transaction Management"
             ],
             database: [
+                "PostgreSQL",
                 "MySQL",
-                "Prisma ORM",
-                "Knex.js",
-                "Database Design & Normalization",
-                "Migration & Schema Management"
-            ],
-            system: [
-                "LINE API (Notification, Chat, Automation)",
-                "External API Integration",
-                "Cron / Scheduled Tasks",
-                "Environment-based Configuration"
+                "Microsoft SQL Server",
+                "Query Optimization",
+                "Indexing"
             ],
             devops: [
-                "Vercel Deployment",
-                "Build & Production Handling",
-                "Debug Production Errors",
-                "Git / GitHub Workflow"
+                "AWS (Lambda, S3, CloudWatch)",
+                "Docker",
+                "Git",
+                "CI/CD (GitHub Actions, GitLab CI)"
+            ],
+            qualityTools: [
+                "Unit Testing",
+                "Code Refactoring",
+                "SonarQube"
             ]
         }
     },
@@ -186,10 +226,10 @@ export const en = {
         systems: {
             title: "Example Systems Built",
             items: [
+                "Document Management & Digital Signature System (Brainergy)",
+                "e-Tax Invoice / e-Receipt System — EVRT/EPP10 (Brainergy)",
                 "Advice E-Commerce & Promotion System (Nuxt.js / Node.js)",
                 "iStore Thailand Sales & Inventory System (Nuxt.js / Node.js)",
-                "Product / Stock Management System",
-                "Quotation & Order Management System",
                 "Gift Voucher & Promotion System",
                 "Dormitory / Booking Management via LINE",
                 "Bug Tracking Dashboard",
@@ -212,6 +252,34 @@ export const en = {
         subtitle: "Professional projects showcasing expertise in full-stack development and modern web technologies",
         viewProject: "Explore Project",
         items: [
+            {
+                title: "e-Tax Invoice / e-Receipt System (Brainergy)",
+                description: "Backend system for e-Tax Invoice and e-Receipt (EVRT/EPP10) integrated directly with Thailand Revenue Department via secure RESTful APIs. Processes enterprise documents in PDF, XML, and JSON formats.",
+                technologies: ["Node.js", "Express", "RESTful API", "AWS S3", "GitLab CI", "PDF/XML/JSON"],
+                githubUrl: "#",
+                liveUrl: "#",
+                imageUrl: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=800&h=450&fit=crop&q=80",
+                highlights: [
+                    "e-Tax Invoice / e-Receipt (EVRT/EPP10) integrated with Thailand Revenue Department",
+                    "Processes enterprise documents in PDF, XML, and JSON formats",
+                    "AWS Lambda batch processing with S3 storage architecture",
+                    "CI/CD pipeline execution and production monitoring via GitLab CI"
+                ]
+            },
+            {
+                title: "Document Management & Digital Signature System (Brainergy)",
+                description: "Enterprise-grade backend system for digital document management and e-signature workflows. Supports document approval lifecycle, batch processing, and secure storage.",
+                technologies: ["Node.js", "Express", "AWS Lambda", "AWS S3", "GitLab CI", "RESTful API"],
+                githubUrl: "#",
+                liveUrl: "#",
+                imageUrl: "https://images.unsplash.com/photo-1618044619888-009e412ff12a?w=800&h=450&fit=crop&q=80",
+                highlights: [
+                    "Enterprise-grade digital document management and e-signature workflows",
+                    "Document approval, tracking, and lifecycle management",
+                    "AWS Lambda-based batch processing with S3 storage",
+                    "Improved system reliability through unit testing and performance optimization"
+                ]
+            },
             {
                 title: "Advice E-Commerce Platform",
                 description: "Participated in the development and maintenance of Advice's large-scale E-commerce system, supporting nationwide orders and promotions.",

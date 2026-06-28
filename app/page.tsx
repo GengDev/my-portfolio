@@ -10,6 +10,7 @@ import { IntroOverlay } from "@/components/layout/IntroOverlay";
 import { Hero } from "@/components/sections/Hero";
 import { ProfessionalSummary } from "@/components/sections/ProfessionalSummary";
 import { About } from "@/components/sections/About";
+import { KeyHighlights } from "@/components/sections/KeyHighlights";
 import { Experience } from "@/components/sections/Experience";
 import { Education } from "@/components/sections/Education";
 import { Skills } from "@/components/sections/Skills";
@@ -53,6 +54,9 @@ export default function Home() {
         </div>
         <div className="section-fade-in">
           <ProfessionalSummary />
+        </div>
+        <div className="section-fade-in">
+          <KeyHighlights />
         </div>
         <div className="section-fade-in">
           <About />

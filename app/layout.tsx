@@ -25,8 +25,8 @@ const chakra = Chakra_Petch({
 
 export const metadata: Metadata = {
   title: "Watchara Sritonwong | Full-Stack Software Engineer",
-  description: "Full-Stack Software Engineer specializing in scalable web applications and high-traffic E-commerce platforms. Expert in Node.js, PHP, Vue.js with performance optimization focus.",
-  keywords: ["software engineer", "full-stack developer", "e-commerce", "node.js", "php", "vue.js", "portfolio", "web development"],
+  description: "Full-Stack Software Engineer with 3+ years of experience in enterprise backend systems, e-commerce platforms, document management, and e-Tax integrations. Expert in Node.js, PHP, Python, AWS Lambda, and CI/CD workflows.",
+  keywords: ["software engineer", "full-stack developer", "enterprise backend", "e-commerce", "node.js", "php", "python", "aws", "docker", "ci/cd", "e-tax", "portfolio", "web development", "Bangkok", "Thailand"],
   authors: [{ name: "Watchara Sritonwong" }],
   creator: "Watchara Sritonwong",
   publisher: "Watchara Sritonwong",
@@ -41,7 +41,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: "Watchara Sritonwong | Full-Stack Software Engineer",
-    description: "Building scalable enterprise solutions with modern web technologies",
+    description: "3+ years building enterprise backend systems, e-Tax integrations, and scalable e-commerce platforms with Node.js, AWS, and modern CI/CD workflows.",
     url: "https://your-portfolio-url.com",
     siteName: "Watchara Sritonwong Portfolio",
     locale: "en_US",
@@ -58,7 +58,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Watchara Sritonwong | Full-Stack Software Engineer",
-    description: "Building scalable enterprise solutions with modern web technologies",
+    description: "3+ years building enterprise backend systems, e-Tax integrations, and scalable e-commerce platforms with Node.js, AWS, and modern CI/CD workflows.",
     images: ["/images/profile.jpg"],
   },
   robots: {
@@ -95,11 +95,11 @@ export default function RootLayout({
               "@type": "Person",
               "name": "Watchara Sritonwong",
               "jobTitle": "Full-Stack Software Engineer",
-              "description": "Full-Stack Software Engineer specializing in scalable web applications and high-traffic E-commerce platforms. Expert in Node.js, PHP, Vue.js with performance optimization focus.",
+              "description": "Full-Stack Software Engineer with 3+ years of experience in enterprise backend systems, e-Tax integrations (EVRT/EPP10), document management, and scalable e-commerce platforms.",
               "url": "https://your-portfolio-url.com",
               "sameAs": [
-                "https://github.com/yourusername",
-                "https://linkedin.com/in/yourprofile"
+                "https://github.com/GengDev",
+                "https://linkedin.com/in/watchara-sritonwong"
               ],
               "address": {
                 "@type": "PostalAddress",
@@ -107,16 +107,18 @@ export default function RootLayout({
                 "addressCountry": "Thailand"
               },
               "email": "Watchara.geng.work@gmail.com",
+              "worksFor": {
+                "@type": "Organization",
+                "name": "Brainergy Co., Ltd."
+              },
               "knowsAbout": [
-                "Node.js",
-                "PHP",
-                "Vue.js",
-                "React",
-                "JavaScript",
-                "TypeScript",
-                "MySQL",
-                "Performance Optimization",
-                "E-commerce Platforms"
+                "Node.js", "PHP", "Python", "C#",
+                "Vue.js", "Nuxt.js", "React", "Next.js",
+                "AWS Lambda", "AWS S3", "Docker",
+                "MySQL", "PostgreSQL", "Microsoft SQL Server",
+                "RESTful API", "CI/CD", "GitLab CI", "GitHub Actions",
+                "e-Tax Invoice", "e-Receipt", "Digital Signature",
+                "Unit Testing", "SonarQube", "Performance Optimization"
               ],
               "hasOccupation": {
                 "@type": "Occupation",

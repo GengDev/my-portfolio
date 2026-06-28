@@ -61,7 +61,18 @@ export function Header() {
               ))}
             </nav>
 
-            <div className="hidden md:block">
+            <div className="hidden md:flex items-center gap-4">
+              <a
+                href="/watchara_sritonwong_resume.pdf"
+                download
+                className="relative group flex items-center px-4 py-2 bg-gradient-to-r from-blue-500/20 to-cyan-500/20 hover:from-blue-500/30 hover:to-cyan-500/30 border border-cyan-400/40 hover:border-cyan-300 rounded-xl text-white font-semibold text-sm transition-all duration-300 hover:scale-105 shadow-md shadow-cyan-500/10 hover:shadow-cyan-500/20"
+                aria-label="Download CV"
+              >
+                <svg className="w-4 h-4 mr-2 text-cyan-300 animate-pulse" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+                </svg>
+                {t.nav.downloadCv}
+              </a>
               <LanguageSwitcher />
             </div>
           </div>
@@ -117,7 +128,17 @@ export function Header() {
               {/* Cyberpunk decorative elements */}
               <div className="absolute top-4 right-8 w-2 h-2 bg-blue-400 rounded-full animate-pulse opacity-60"></div>
               <div className="absolute bottom-4 left-8 w-1 h-1 bg-cyan-400 rounded-full animate-ping opacity-40"></div>
-              <div className="px-4 pt-4 border-t border-slate-700/50 mt-4">
+              <div className="px-4 pt-4 border-t border-slate-700/50 mt-4 space-y-4">
+                <a
+                  href="/watchara_sritonwong_resume.pdf"
+                  download
+                  className="flex items-center justify-center w-full px-4 py-3 bg-gradient-to-r from-blue-500/20 to-cyan-500/20 border border-cyan-400/40 rounded-xl text-white font-semibold text-sm transition-all duration-300"
+                >
+                  <svg className="w-4 h-4 mr-2 text-cyan-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+                  </svg>
+                  {t.nav.downloadCv}
+                </a>
                 <div className="flex justify-center">
                   <LanguageSwitcher />
                 </div>
